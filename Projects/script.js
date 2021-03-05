@@ -483,6 +483,74 @@ function main(){
 
     });
 
+    ////////touch events
+    //swipe nav left to close
+    let swipeNav = new Swipe("mySidenav");
+    swipeNav.onLeft(function(){
+        if(navOpen){
+            switchNav();
+        }
+    });
+
+    swipeNav.element.addEventListener('touchstart', function(evt) {
+        swipeNav.handleTouchStart(evt);
+    }, false);
+
+    swipeNav.element.addEventListener('touchmove', function(evt) {
+        swipeNav.handleTouchMove(evt);
+    }, false);
+
+    swipeNav.element.addEventListener('touchend', function(evt) {
+        swipeNav.handleTouchEnd(evt);
+    }, false);
+
+    //touch main to close nav
+    document.getElementById("main").addEventListener("touchend", function(e){
+        if(e.target.id !== "openbtn"){
+            e.preventDefault();
+            if(navOpen){
+                switchNav();
+            }
+        }
+    });
+
+    //swipe main to open nav
+    let swipeMain = new Swipe("main");
+    swipeMain.onRight(function(){
+        if(!navOpen){
+            switchNav();
+        }
+    });
+
+    swipeMain.element.addEventListener('touchstart', function(evt) {
+        swipeMain.handleTouchStart(evt);
+    }, false);
+
+    swipeMain.element.addEventListener('touchmove', function(evt) {
+        swipeMain.handleTouchMove(evt);
+    }, false);
+
+    swipeMain.element.addEventListener('touchend', function(evt) {
+        swipeMain.handleTouchEnd(evt);
+    }, false);
+
+    //openbtn touch change color
+    let openbtnJS = document.getElementById("openbtn");
+    openbtnJS.addEventListener("touchstart", function(e){
+        if(e.cancelable){
+            e.preventDefault();
+        }
+        $openbtn.css("color", "rgb(92, 168, 255)");
+    });
+    openbtnJS.addEventListener("touchend", function(e){
+        if(e.cancelable){
+            e.preventDefault();
+        }
+        $openbtn.css("color", "rgb(41, 41, 41)");
+        switchNav();
+    });
+    /////////end touch events
+
     isSecLoaded = false;
     window.requestAnimFrame(mainProgressAnim);
     startLoadSec1($mainloader);

@@ -86,3 +86,96 @@ function loadImage(url, callback) {
  }
  
  /************** */
+
+ //class for detect touch swipes
+ class Swipe {
+  constructor(element) {
+      this.xDown = null;
+      this.yDown = null;
+      this.movedLeft = false;
+      this.movedRight = false;
+      this.element = document.getElementById(element);
+  }
+
+  getTouches(evt) {
+    return evt.touches ||             // browser API
+           evt.originalEvent.touches; // jQuery
+  }                                                     
+  
+  handleTouchStart(evt) {
+      const firstTouch = this.getTouches(evt)[0];                                      
+      this.xDown = firstTouch.clientX;                                      
+      this.yDown = firstTouch.clientY;                                      
+  };   
+
+  onLeft(callback) {
+      this.onLeft = callback;
+
+      return this;
+  }
+
+  onRight(callback) {
+      this.onRight = callback;
+
+      return this;
+  }
+
+  onUp(callback) {
+      this.onUp = callback;
+
+      return this;
+  }
+
+  onDown(callback) {
+      this.onDown = callback;
+
+      return this;
+  }
+
+  handleTouchMove(evt) {
+      if ( ! this.xDown || ! this.yDown ) {
+         return;
+      }
+
+      var xUp = evt.changedTouches[0].clientX;
+      var yUp = evt.changedTouches[0].clientY;
+
+      this.xDiff = this.xDown - xUp;
+      this.yDiff = this.yDown - yUp;
+
+      if ( Math.abs( this.xDiff ) > Math.abs( this.yDiff ) ) { // Most significant.
+          if ( this.xDiff > 0 ) {
+              this.movedLeft = true;
+              this.movedRight = false;
+          } else {
+              this.movedRight = true;
+              this.movedLeft = false;
+          }
+      } else {
+          if ( this.yDiff > 0 ) {
+              ;
+          } else {
+              ;
+          }
+      }
+
+      // Reset values.
+      this.xDown = null;
+      this.yDown = null;
+  }
+
+  handleTouchEnd(evt){
+    if(this.movedLeft){
+      if(this.onLeft !== undefined){
+        this.onLeft();
+      }
+    }
+    else if(this.movedRight){
+      if(this.onRight !== undefined){
+        this.onRight();
+      }
+    }
+    this.movedLeft = false;
+    this.movedRight = false;
+  }
+}

@@ -1,0 +1,633 @@
+html{
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'DotGothic16', sans-serif;
+    color: rgb(223, 223, 223);
+
+    background-image: url("./resources/main\ black2.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+}
+body::-webkit-scrollbar {
+    width: 0.75rem; 
+}
+  
+body::-webkit-scrollbar-track {
+    background: rgb(31, 31, 31); 
+}
+  
+body::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 20px; 
+    -webkit-box-shadow: inset 2px 2px 5px rgb(75, 75, 75); 
+            box-shadow: inset 2px 2px 5px rgb(75, 75, 75);
+}
+
+#loader{
+    position: fixed;
+    background: rgb(27, 27, 27);
+    opacity: 1;
+
+    width: 100%;
+    height:100%;
+    left:0;
+    top:0;
+
+    -webkit-transition: opacity 0.5s ease;
+    transition: opacity 0.5s ease;
+    z-index: 3;
+}
+
+h1{
+    padding: 0;
+    margin: 0;
+    margin-top:10px;
+    font-size: 2rem;
+    color: rgb(153, 153, 153);
+}
+h3{
+    padding: 0;
+    margin: 0;
+    font-size:1.15rem;
+    color: rgb(153, 153, 153);
+}
+
+.noselect {
+-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */ /* Konqueror HTML */
+        -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome, Edge, Opera and Firefox */
+}
+
+.tint{
+    --tintalpha:rgba(216, 188, 61, 0.34);
+
+    background: var(--tintalpha);
+    width: clamp(105px, 7.5vmax, 195px);
+    height: clamp(105px, 7.5vmax, 195px);
+    -webkit-transform: translateX(clamp(-18.5px, -1.35vmax, -35.5px)) translateY(clamp(-17.5px, -1.25vmax, -32.5px));
+            transform: translateX(clamp(-18.5px, -1.35vmax, -35.5px)) translateY(clamp(-17.5px, -1.25vmax, -32.5px));
+    border-radius: 50%;
+
+    padding: 0;
+    margin: 0;
+    -webkit-filter:blur(10px);
+            filter:blur(10px);
+
+    -webkit-transition: background 3.5s ease;
+
+    transition: background 3.5s ease;
+}
+@media only screen and (min-width:1500px){
+    .tint{
+        -webkit-transform: translateX(clamp(-22.5px, -1.5vmax, -40.5px)) translateY(clamp(-22.5px, -1.5vmax, -40.5px));
+                transform: translateX(clamp(-22.5px, -1.5vmax, -40.5px)) translateY(clamp(-22.5px, -1.5vmax, -40.5px));
+    }
+}
+@media only screen and (min-width:1950px){
+    .tint{
+        -webkit-transform: translateX(clamp(-28.5px, -1.85vmax, -51.5px)) translateY(clamp(-28.5px, -1.85vmax, -51.5px));
+                transform: translateX(clamp(-28.5px, -1.85vmax, -51.5px)) translateY(clamp(-28.5px, -1.85vmax, -51.5px));     
+    }
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+
+    background-size: cover;
+    overflow-x: hidden;
+    -webkit-transition: width 0.5s ease;
+    transition: width 0.5s ease;
+    padding-top: 60px;
+
+    font-family: 'VT323', monospace;
+    font-size: 2rem;
+}
+.sidenav::-webkit-scrollbar {
+    width: 0.75rem;
+}
+  
+.sidenav::-webkit-scrollbar-track {
+    background: transparent;
+}
+  
+.sidenav::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 20px; 
+    -webkit-box-shadow: inset 2px 2px 5px rgb(56, 56, 56); 
+            box-shadow: inset 2px 2px 5px rgb(56, 56, 56);
+}
+
+.navtint{
+    --navtintalpha: 0;
+
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0;
+    margin: 0;
+    z-index: -1;
+    background-image: url("./resources/nav.gif");
+    background-size: cover;
+    opacity: var(--navtintalpha);
+    /* background: rgba(21, 20, 26, var(--navtintalpha)); */
+
+    -webkit-transition: background 3s ease, width 0.5s ease, opacity 3s ease;
+
+    transition: background 3s ease, width 0.5s ease, opacity 3s ease;
+}
+
+.sidenav .navlist {
+    --fontcolor: rgb(100, 100, 100);
+    padding: 32px 20px 32px 32px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    text-decoration: none;
+
+    color: var(--fontcolor);
+    display: block;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    line-height: normal;
+
+    -webkit-transition: color 0.5s ease;
+
+    transition: color 0.5s ease;
+}
+.light{
+    --lightcolor: rgb(228, 222, 194);
+    color: var(--lightcolor) !important;
+}
+
+.sidenav .navlist > span{
+    display: block;
+    line-height: 1.1rem;
+    font-size: 1.15rem;
+}
+
+
+.sidenav #closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.navend{
+    margin-top:30%;
+}
+
+#button{
+    --circleh:-25vh;
+    --circlel:50%;
+
+    position: absolute;
+    border: 2px outset rgba(255, 244, 196, 0.8);
+    background-image: url("../imgs/buttonBG.jpg");
+    background-size: cover;
+    background-repeat: repeat;
+
+    width: clamp(70px, 5vmax, 130px);
+    height: clamp(70px, 5vmax, 130px);
+    left: clamp(calc(var(--circlel) - 70px), calc(var(--circlel) - 2.25vmax), calc(var(--circlel) - 30px));
+    top: calc(var(--circleh) - 2vmax);
+    border-radius: 50%;
+
+    -webkit-box-sizing: border-box;;
+            box-sizing: border-box;
+
+    z-index: 1;
+
+    -webkit-transition: background 0.25s ease, top 1.25s ease, left 0.9s ease;
+    transition: background 0.25s ease, top 1.25s ease, left 0.9s ease;
+}
+#button:hover{
+    cursor: pointer;
+}
+
+#btnpopup{
+    --popsize: 0rem;
+
+    position: absolute;
+    color: white;
+    font-size: var(--popsize);
+    font-family: 'Amatic SC', monospace;
+
+    text-align: center;
+    top: 25%;
+    width: clamp(70px, 5vmax, 130px);
+
+    -webkit-transition: all 0.4s ease;
+
+    transition: all 0.4s ease;
+}
+@media only screen and (max-width:770px){
+    #btnpopup{
+        --popsize: 1.75rem;
+    }
+}
+@media only screeb and (min-width:2000px){
+    #btnpopup{
+        top: 37%;    
+    }
+}
+
+#main {
+    -webkit-transition: margin-left 0.5s, esae;
+    transition: margin-left 0.5s, esae;
+    padding: 35px;
+    overflow-x:hidden;
+}
+
+#main_loader{
+    --mainloaderAlpha: 1;
+
+    position: fixed;
+    width:110vw;
+    height: 150vh;
+    left:0%;
+    top:0%;
+    background-image: url("./resources/main\ black2.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    opacity: var(--mainloaderAlpha);
+
+    overflow: hidden;
+
+    z-index: 2;
+    -webkit-transition: opacity 1s ease, left .5s ease;
+    transition: opacity 1s ease, left .5s ease;
+}
+#main_loader #progress{
+    --mainprogressDeg: 0deg;
+    --progressRad:0%;
+
+    position: relative;
+    width: 12vw;
+    height: 12vw;
+
+    margin:0;
+    left: calc(44% - 6vw);
+    top: calc(49vh - 6vw);
+    background: rgba(107, 107, 107, 0.5);
+
+    -webkit-transform: perspective(800px) rotateZ(45deg) rotateY(var(--mainprogressDeg)) rotateX(var(--mainprogressDeg));
+
+            transform: perspective(800px) rotateZ(45deg) rotateY(var(--mainprogressDeg)) rotateX(var(--mainprogressDeg));
+    -webkit-filter: blur(0.3rem);
+            filter: blur(0.3rem);
+
+    border-radius: var(--progressRad);
+
+    -webkit-transition: border-radius 1.5s ease, -webkit-transform 1s ease;
+
+    transition: border-radius 1.5s ease, -webkit-transform 1s ease;
+
+    transition: transform 1s ease, border-radius 1.5s ease;
+
+    transition: transform 1s ease, border-radius 1.5s ease, -webkit-transform 1s ease;
+}
+
+
+#main .contents{
+    --imgborderColor: rgb(0,0,0);
+    --imgshadowPosX: 1.5rem;
+    --imgshadowPosY: 1.5rem;
+    margin:4%;
+}
+@media only screen and (min-width: 2000px){
+    #main .contents{
+        margin: 9%;
+        margin-top:6%;
+    }
+}
+@media only screen and (max-width: 500px){
+    #main .contents{
+        margin: 0;
+    }
+}
+
+#main .contents img{
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    border: 0.25rem solid var(--imgborderColor);
+
+    -webkit-box-shadow: var(--imgshadowPosX) var(--imgshadowPosY) 2rem rgba(82, 82, 82, 0.781);
+
+            box-shadow: var(--imgshadowPosX) var(--imgshadowPosY) 2rem rgba(82, 82, 82, 0.781);
+    -webkit-transition: border 2.5s ease, -webkit-box-shadow 2.5s ease;
+    transition: border 2.5s ease, -webkit-box-shadow 2.5s ease;
+    transition: border 2.5s ease, box-shadow 2.5s ease;
+    transition: border 2.5s ease, box-shadow 2.5s ease, -webkit-box-shadow 2.5s ease;
+}
+#main .contents iframe{
+    border: 0.25rem solid var(--imgborderColor);
+    -webkit-box-shadow: var(--imgshadowPosX) var(--imgshadowPosY) 2rem rgba(95, 95, 95, 0.781);
+            box-shadow: var(--imgshadowPosX) var(--imgshadowPosY) 2rem rgba(95, 95, 95, 0.781);
+    -webkit-transition: border 2.5s ease, -webkit-box-shadow 2.5s ease;
+    transition: border 2.5s ease, -webkit-box-shadow 2.5s ease;
+    transition: border 2.5s ease, box-shadow 2.5s ease;
+    transition: border 2.5s ease, box-shadow 2.5s ease, -webkit-box-shadow 2.5s ease;
+}
+
+#main .contents h1{
+    color: rgb(224, 224, 224);
+}
+#main .contents h4{
+    color: rgb(224, 224, 224);
+}
+
+
+@font-face{
+    font-family: "LCD";
+    src: url("./fonts/LCD.woff") format("woff"),
+        url("./fonts/LCD.ttf") format("truetype");
+}
+
+@font-face{
+    font-family: "Highway";
+    src: url("./fonts/Highway.woff") format("woff"),
+        url("./fonts/Highway.ttf") format("truetype");
+}
+
+@font-face{
+    font-family: "TypeWriter";
+    src: url("./fonts/Typewriter.woff") format("woff"),
+        url("./fonts/Typewriter.ttf") format("truetype");
+}
+
+@font-face{
+    font-family: "PixelSimple";
+    src: url("./fonts/PixelSimple.woff") format("woff"),
+         url("./fonts/PixelSimple.ttf") format("truetype");
+}
+
+/*content 1*/
+#main .contents #content1 h1{
+    margin-top:2rem;
+    font-size: 3.25rem;
+    font-weight: 300;
+    font-family: 'Typewriter', serif;
+}
+@media only screen and (max-width:500px){
+    #main .contents #content1 h1{
+        font-size: 2.2rem;
+    }
+}
+
+#main .contents #content1 #logo{
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    border:0;
+    width: 100%;
+}
+
+#main .contents #content1 h4{
+    font-family: 'Typewriter', serif;
+    margin-bottom: 3rem;
+}
+
+#main .contents #content1 iframe{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 5%;
+    border-radius: 12px;
+}
+
+#main .contents #content1 #img-center1{
+    position: relative;
+    margin-left: 20%;
+    margin-bottom: 3.5%;
+    width:60%;
+    border-radius: 12px;
+}
+
+#main .contents #content1 #img-center2{
+    position: relative;
+    margin-bottom: 3.5%;
+    width:100%;
+    border-radius: 12px;
+}
+
+#main .contents #content1 p{
+    position: relative;
+    padding: 3% 1% 3% 1%;
+    font-family: 'Typewriter', serif;
+    font-size: 1.15rem;
+}
+#main .contents #content1 p a{
+    color: white;
+    text-decoration: underline;
+}
+#main .contents #content1 p a:hover{
+    color: rgb(255, 233, 133);
+    text-decoration: line-through;
+}
+#main .contents #content1 #quote{
+    position: relative;
+    margin-left: 20%;
+    margin-right:20%;
+    margin-bottom: 5%;
+    font-family: 'Typewriter', serif;
+    font-size: 1.15rem;
+}
+
+#main .contents #content1 #p-sep{
+    font-size:2.5rem;
+    text-align: center;
+}
+@media only screen and (min-width: 2000px){
+    #main .contents #content1 #p-sep{
+        font-size:3rem;
+    }
+    #main .contents #content1 p{
+        font-size: 1.36rem;
+    }
+    #main .contents #content1 #quote{
+        font-size: 1.36rem;    
+    }
+}
+@media only screen and (max-width: 780px){
+    #main .contents #content1 p{
+        padding: 2% 0% 2% 0%;  
+        font-size: 0.96rem;
+    }
+    #main .contents #content1 #img-center1{
+        margin-left: 0;
+        width:100%;
+    }
+    #main .contents #content1 #img-center2{
+        width:100%;
+    }
+    #main .contents #content1 #quote{
+        margin-left: 0%;
+        margin-right:0%;
+        font-size: 0.96rem;
+    }
+}
+
+
+/*content 2*/
+#main .contents #content2 h1{
+    margin-top:5rem;
+    font-size: 2.5rem;
+    font-weight: 300;
+    font-family: "LCD", monospace;
+    line-height: 5rem;
+}
+@media only screen and (max-width:510px){
+    #main .contents #content2 h1{
+        font-size: 1.2rem;
+        line-height: 3rem;
+    }
+}
+
+#main .contents #content2 #logo{
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    border:0;
+    width: 100%;
+    opacity: 0.75;
+}
+
+#main .contents #content2 h4{
+    font-family: "Highway", monospace;
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+}
+#main .contents #content2 h3{
+    font-family: "LCD", monospace;
+    margin-bottom: 4%;
+    margin-top: 4%;
+}
+
+#main .contents #content2 iframe{
+    position: relative;
+    width: 94%;
+    height: 100%;
+    margin-bottom: 5%;
+    margin-left: 2.5%;
+}
+
+#main .contents #content2 #img-center1{
+    position: relative;
+    margin-left: 4%;
+    margin-bottom: 3.5%;
+    width:45%;
+}
+
+#main .contents #content2 #img-center2{
+    position: relative;
+    margin-bottom: 3.5%;
+    margin-left:2.5%;
+    width:95%;
+}
+
+#main .contents #content2 #img-center3{
+    position: relative;
+    width:40%;
+    margin-left: 30%;
+}
+
+#main .contents #content2 p{
+    position: relative;
+    padding: 3% 0% 3% 0%;
+    font-family: 'PixelSimple', monospace;
+    font-size: 1.6rem;
+}
+#main .contents #content2 p a{
+    color: white;
+    text-decoration: underline;
+}
+#main .contents #content2 p a:hover{
+    color: rgb(255, 233, 133);
+    text-decoration: line-through;
+}
+#main .contents #content2 #quote{
+    position: relative;
+    margin-left: 20%;
+    margin-right:20%;
+    margin-bottom: 5%;
+    font-family: 'PixelSimple', monospace;
+    font-size: 1.6rem;
+    padding: 0% 0% 0% 0%;
+}
+
+#main .contents #content2 #p-sep{
+    font-family: "PixelSimple", monospace;
+    font-size: 3.6rem;
+    text-align: center;
+    padding:0;
+    margin:0;
+}
+@media only screen and (min-width: 2000px){
+    #main .contents #content2 #p-sep{
+        font-size: 4.5rem;
+    }
+    #main .contents #content2 p{
+        font-size: 1.8rem;
+    }
+    #main .contents #content2 #quote{
+        font-size: 1.8rem;    
+    }
+}
+@media only screen and (max-width: 780px){
+    #main .contents #content2 p{
+        padding: 2% 0% 2% 0%;  
+        font-size: 1.35rem;
+    }
+    #main .contents #content2 #img-center1{
+        margin-left: 0;
+        width:100%;
+    }
+    #main .contents #content2 #img-center2{
+        width:100%;
+    }
+    #main .contents #content2 #img-center3{
+        width: 100%;
+        margin-left:0;
+    }
+    #main .contents #content2 iframe{
+        /* margin-left: 1%; */
+        width:98%; 
+    }
+    #main .contents #content2 #quote{
+        margin-left: 0%;
+        margin-right:0%;
+        font-size: 1.35rem;
+    }
+}
+
+
+
+#main #openbtn{
+    font-size: 2rem;
+    color: rgb(129, 129, 129);
+    cursor: pointer;
+}
+#main #openbtn:hover{
+    color: rgb(252, 252, 252);
+}
+
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+@media only screen and (max-width: 500px){
+    body{
+        background-image: url("./resources/main\ black2V.jpg");
+    }
+}

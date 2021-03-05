@@ -1,0 +1,423 @@
+html{
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'DotGothic16', sans-serif;
+    
+    background-image: url("./resources/main\ white1.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+}
+body::-webkit-scrollbar {
+    width: 0.75rem; 
+}
+  
+body::-webkit-scrollbar-track {
+    background: rgb(185, 172, 156); 
+}
+  
+body::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 20px; 
+    -webkit-box-shadow: inset 2px 2px 5px rgb(131, 131, 131); 
+            box-shadow: inset 2px 2px 5px rgb(131, 131, 131);
+}
+
+#loader{
+    position: fixed;
+    background: rgb(224, 222, 218);
+    opacity: 1;
+
+    width: 100%;
+    height:100%;
+    left:0;
+    top:0;
+
+    -webkit-transition: opacity 0.5s ease;
+    transition: opacity 0.5s ease;
+    z-index: 4;
+}
+
+h1{
+    padding: 0;
+    margin: 0;
+    margin-top:10px;
+    font-size: 2rem;
+    color: rgb(56, 56, 56);
+}
+h3{
+    padding: 0;
+    margin: 0;
+    font-size:0.95rem;
+    color: rgb(56, 56, 56);
+}
+
+.noselect {
+-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */ /* Konqueror HTML */
+        -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome, Edge, Opera and Firefox */
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+
+    background-size: cover;
+    overflow-x: hidden;
+    -webkit-transition: width 0.5s ease;
+    transition: width 0.5s ease;
+    padding-top: 60px;
+
+    font-family: 'VT323', monospace;
+    font-size: 2rem;
+}
+.sidenav::-webkit-scrollbar {
+    width: 0.75rem;
+}
+  
+.sidenav::-webkit-scrollbar-track {
+    background: transparent;
+}
+  
+.sidenav::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 20px; 
+    -webkit-box-shadow: inset 2px 2px 5px rgb(131, 131, 131); 
+            box-shadow: inset 2px 2px 5px rgb(131, 131, 131);
+}
+
+.navtint{
+    --navtintalpha: 0.83;
+
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0;
+    margin: 0;
+    z-index: 0;
+    background-image: url("./resources/nav.gif");
+    background-size: cover;
+    opacity: var(--navtintalpha);
+    /* background: rgba(21, 20, 26, var(--navtintalpha)); */
+
+    -webkit-transition: background 3s ease, width 0.5s ease, opacity 3s ease;
+
+    transition: background 3s ease, width 0.5s ease, opacity 3s ease;
+}
+
+.sidenav .navlist {
+    --fontcolor: rgb(100, 100, 100);
+    padding: 32px 20px 32px 32px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    text-decoration: none;
+
+    color: var(--fontcolor);
+    display: block;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    line-height: normal;
+
+    -webkit-transition: color 0.5s ease;
+
+    transition: color 0.5s ease;
+}
+.light{
+    --lightcolor: rgb(228, 222, 194);
+    color: var(--lightcolor) !important;
+}
+.sidenav .navlist > span{
+    display: block;
+    line-height: 1.1rem;
+    font-size: 1.15rem;
+}
+
+
+.sidenav #closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.navend{
+    margin-top:30%;
+}
+
+.tint{
+    --tintalpha:rgba(216, 188, 61, 0.34);
+
+    background: var(--tintalpha);
+    width: clamp(105px, 7.5vmax, 195px);
+    height: clamp(105px, 7.5vmax, 195px);
+    -webkit-transform: translateX(clamp(-18.5px, -1.35vmax, -35.5px)) translateY(clamp(-17.5px, -1.25vmax, -32.5px));
+            transform: translateX(clamp(-18.5px, -1.35vmax, -35.5px)) translateY(clamp(-17.5px, -1.25vmax, -32.5px));
+    border-radius: 50%;
+
+    padding: 0;
+    margin: 0;
+    -webkit-filter:blur(10px);
+            filter:blur(10px);
+
+    -webkit-transition: background 3.5s ease;
+
+    transition: background 3.5s ease;
+}
+@media only screen and (min-width:1500px){
+    .tint{
+        -webkit-transform: translateX(clamp(-22.5px, -1.5vmax, -40.5px)) translateY(clamp(-22.5px, -1.5vmax, -40.5px));
+                transform: translateX(clamp(-22.5px, -1.5vmax, -40.5px)) translateY(clamp(-22.5px, -1.5vmax, -40.5px));
+    }
+}
+@media only screen and (min-width:1950px){
+    .tint{
+        -webkit-transform: translateX(clamp(-28.5px, -1.85vmax, -51.5px)) translateY(clamp(-28.5px, -1.85vmax, -51.5px));
+                transform: translateX(clamp(-28.5px, -1.85vmax, -51.5px)) translateY(clamp(-28.5px, -1.85vmax, -51.5px));     
+    }
+}
+#button{
+    --circleh:-25vh;
+    --circlel:50%;
+    --circleScale: 1;
+
+    position: absolute;
+    border: 2px outset rgba(255, 244, 196, 0.8);
+    background-image: url("../imgs/buttonBG.jpg");
+    background-size: cover;
+    background-repeat: repeat;
+
+    width: clamp(70px, 5vmax, 130px);
+    height: clamp(70px, 5vmax, 130px);
+    left: clamp(calc(var(--circlel) - 70px), calc(var(--circlel) - 2.25vmax), calc(var(--circlel) - 30px));
+    top: calc(var(--circleh) - 2vmax);
+    border-radius: 50%;
+
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+
+    z-index: 1;
+
+    transform: scale(var(--circleScale));
+
+    -webkit-transition: background 0.25s ease, top 1.25s ease, left 0.9s ease, transform 1s ease;
+    transition: background 0.25s ease, top 1.25s ease, left 0.9s ease, transform 1s ease;
+}
+#button:hover{
+    cursor: pointer;
+}
+
+#btnpopup{
+    --popsize: 0rem;
+
+    position: absolute;
+    color: white;
+    font-size: var(--popsize);
+    font-family: 'Amatic SC', monospace;
+
+    text-align: center;
+    top: 25%;
+    width: clamp(70px, 5vmax, 130px);
+
+    -webkit-transition: all 0.4s ease;
+
+    transition: all 0.4s ease;
+}
+@media only screen and (max-width:770px){
+    #btnpopup{
+        --popsize: 0.85rem;
+        top: 70%;
+    }
+}
+@media only screeb and (min-width:2000px){
+    #btnpopup{
+        top: 37%;    
+    }
+}
+
+#main {
+    -webkit-transition: margin-left 0.5s, esae;
+    transition: margin-left 0.5s, esae;
+    padding: 35px;
+    overflow-x:hidden;
+    z-index: 2;
+}
+
+#main_loader{
+    --mainloaderAlpha: 1;
+
+    position: fixed;
+    width:110vw;
+    height: 150vh;
+    left:0%;
+    top:0%;
+    background-image: url("./resources/main\ white1.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    opacity: var(--mainloaderAlpha);
+
+    overflow: hidden;
+
+    z-index: 3;
+    -webkit-transition: opacity 1s ease, left .5s ease;
+    transition: opacity 1s ease, left .5s ease;
+}
+#main_loader #progress{
+    --mainprogressDeg: 0deg;
+    --progressRad:0%;
+
+    position: relative;
+    width: 12vw;
+    height: 12vw;
+
+    margin:0;
+    left: calc(44% - 6vw);
+    top: calc(49vh - 6vw);
+    background: rgba(66, 66, 66, 0.5);
+
+    -webkit-transform: perspective(800px) rotateZ(45deg) rotateY(var(--mainprogressDeg)) rotateX(var(--mainprogressDeg));
+
+            transform: perspective(800px) rotateZ(45deg) rotateY(var(--mainprogressDeg)) rotateX(var(--mainprogressDeg));
+    -webkit-filter: blur(0.3rem);
+            filter: blur(0.3rem);
+
+    border-radius: var(--progressRad);
+
+    -webkit-transition: border-radius 1.5s ease, -webkit-transform 1s ease;
+
+    transition: border-radius 1.5s ease, -webkit-transform 1s ease;
+
+    transition: transform 1s ease, border-radius 1.5s ease;
+
+    transition: transform 1s ease, border-radius 1.5s ease, -webkit-transform 1s ease;
+}
+
+#main .contents{
+    --imgborderColor: rgb(0,0,0);
+    --imgshadowPosX: 1.5rem;
+    --imgshadowPosY: 1.5rem;
+    margin:4%;
+}
+@media only screen and (min-width: 2000px){
+    #main .contents{
+        margin: 9%;
+        margin-top:6%;
+    }
+}
+@media only screen and (max-width: 500px){
+    #main .contents{
+        margin: 0;
+    }
+}
+
+#main .contents img{
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    border: 0.25rem solid var(--imgborderColor);
+
+    -webkit-box-shadow: var(--imgshadowPosX) var(--imgshadowPosY) 2rem rgba(95, 95, 95, 0.781);
+
+            box-shadow: var(--imgshadowPosX) var(--imgshadowPosY) 2rem rgba(95, 95, 95, 0.781);
+    -webkit-transition: border 2.5s ease, -webkit-box-shadow 2.5s ease;
+    transition: border 2.5s ease, -webkit-box-shadow 2.5s ease;
+    transition: border 2.5s ease, box-shadow 2.5s ease;
+    transition: border 2.5s ease, box-shadow 2.5s ease, -webkit-box-shadow 2.5s ease;
+}
+#main .contents iframe{
+    border: 0.25rem solid var(--imgborderColor);
+    -webkit-box-shadow: var(--imgshadowPosX) var(--imgshadowPosY) 2rem rgba(95, 95, 95, 0.781);
+            box-shadow: var(--imgshadowPosX) var(--imgshadowPosY) 2rem rgba(95, 95, 95, 0.781);
+    -webkit-transition: border 2.5s ease, -webkit-box-shadow 2.5s ease;
+    transition: border 2.5s ease, -webkit-box-shadow 2.5s ease;
+    transition: border 2.5s ease, box-shadow 2.5s ease;
+    transition: border 2.5s ease, box-shadow 2.5s ease, -webkit-box-shadow 2.5s ease;
+}
+
+/*content 1*/
+#main .contents #content1 h1{
+    margin-top:2rem;
+    font-size: 2.5rem;
+    font-family: 'Cutive Mono', monospace;
+    color: rgb(22, 22, 22);
+    font-style: italic;
+}
+@media only screen and (max-width:500px){
+    #main .contents #content1 h1{
+        font-size: 2rem;
+    }
+}
+
+#main .contents #content1 h4{
+    margin-bottom: 3rem;
+}
+
+#main .contents #content1 p{
+    position: relative;
+    padding: 7% 5% 5% 5%;
+    font-family: 'Cutive Mono', monospace;
+    font-size: 1.25rem;
+}
+
+#main .contents #content1 #logo{
+    width: 25%;
+    margin-left: 74%; 
+    border-radius: 20%;
+}
+
+@media only screen and (max-width: 780px){
+    #main .contents #content1 p{
+        padding: 15% 2.5% 5% 2.5%;  
+        font-size: 1rem;
+    }
+    #main .contents #content1 #logo{
+        width: 35%;
+        margin-left: 64%; 
+    }
+}
+@media only screen and (max-width: 550px){
+    #main .contents #content1 #logo{
+        width: 45%;
+        margin-left: 54%; 
+    }
+}
+@media only screen and (min-width: 2000px){
+    #main .contents #content1 p{
+        font-size: 1.45rem;
+    }
+    #main .contents #content1 #logo{
+        width: 18%;
+        margin-left: 81%; 
+    }
+}
+
+
+
+#main #openbtn{
+    font-size: 2rem;
+    color: rgb(41, 41, 41);
+    cursor: pointer;
+}
+#main #openbtn:hover{
+    color: rgb(252, 252, 252);
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+}
+@media only screen and (max-width: 500px){
+    body{
+        background-image: url("./resources/main\ white1V.jpg");
+    }
+    #main_loader{
+        background-image: url("./resources/main\ white1V.jpg");
+    }
+}

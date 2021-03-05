@@ -1,0 +1,485 @@
+html{
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'DotGothic16', sans-serif;
+    color: rgb(223, 223, 223);
+
+    background-image: url("./resources/main\ black1.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+}
+body::-webkit-scrollbar {
+    width: 0.75rem; 
+}
+  
+body::-webkit-scrollbar-track {
+    background: rgb(31, 31, 31); 
+}
+  
+body::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 20px; 
+    box-shadow: inset 2px 2px 5px rgb(75, 75, 75);
+}
+
+#loader{
+    position: fixed;
+    background: rgb(27, 27, 27);
+    opacity: 1;
+
+    width: 100%;
+    height:100%;
+    left:0;
+    top:0;
+
+    -webkit-transition: opacity 0.5s ease;
+    transition: opacity 0.5s ease;
+    z-index: 3;
+}
+
+h1{
+    padding: 0;
+    margin: 0;
+    margin-top:10px;
+    font-size: 2rem;
+    color: rgb(153, 153, 153);
+}
+h3{
+    padding: 0;
+    margin: 0;
+    font-size:1.15rem;
+    color: rgb(153, 153, 153);
+}
+
+.noselect {
+-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */ /* Konqueror HTML */
+        -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome, Edge, Opera and Firefox */
+}
+
+.tint{
+    --tintalpha:rgba(216, 188, 61, 0.34);
+
+    background: var(--tintalpha);
+    width: clamp(105px, 7.5vmax, 195px);
+    height: clamp(105px, 7.5vmax, 195px);
+    transform: translateX(clamp(-18.5px, -1.35vmax, -35.5px)) translateY(clamp(-17.5px, -1.25vmax, -32.5px));
+    border-radius: 50%;
+
+    padding: 0;
+    margin: 0;
+    filter:blur(10px);
+
+    transition: background 3.5s ease;
+}
+@media only screen and (min-width:1500px){
+    .tint{
+        transform: translateX(clamp(-22.5px, -1.5vmax, -40.5px)) translateY(clamp(-22.5px, -1.5vmax, -40.5px));
+    }
+}
+@media only screen and (min-width:1950px){
+    .tint{
+        transform: translateX(clamp(-28.5px, -1.85vmax, -51.5px)) translateY(clamp(-28.5px, -1.85vmax, -51.5px));     
+    }
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+
+    background-size: cover;
+    overflow-x: hidden;
+    transition: width 0.5s ease;
+    padding-top: 60px;
+
+    font-family: 'VT323', monospace;
+    font-size: 2rem;
+}
+.sidenav::-webkit-scrollbar {
+    width: 0.75rem;
+}
+  
+.sidenav::-webkit-scrollbar-track {
+    background: transparent;
+}
+  
+.sidenav::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 20px; 
+    box-shadow: inset 2px 2px 5px rgb(56, 56, 56);
+}
+
+.navtint{
+    --navtintalpha: 0;
+
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0;
+    margin: 0;
+    z-index: -1;
+    background-image: url("./resources/nav.gif");
+    background-size: cover;
+    opacity: var(--navtintalpha);
+    /* background: rgba(21, 20, 26, var(--navtintalpha)); */
+
+    transition: background 3s ease, width 0.5s ease, opacity 3s ease;
+}
+
+.sidenav .navlist {
+    --fontcolor: rgb(100, 100, 100);
+    padding: 32px 20px 32px 32px;
+    box-sizing: border-box;
+    text-decoration: none;
+
+    color: var(--fontcolor);
+    display: block;
+    transition: 0.3s;
+    line-height: normal;
+
+    transition: color 0.5s ease;
+}
+.light{
+    --lightcolor: rgb(228, 222, 194);
+    color: var(--lightcolor) !important;
+}
+
+.sidenav .navlist > span{
+    display: block;
+    line-height: 1.1rem;
+    font-size: 1.15rem;
+}
+
+
+.sidenav #closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.navend{
+    margin-top:30%;
+}
+
+#button{
+    --circleh:-25vh;
+    --circlel:50%;
+
+    position: absolute;
+    border: 2px outset rgba(255, 244, 196, 0.8);
+    background-image: url("../imgs/buttonBG.jpg");
+    background-size: cover;
+    background-repeat: repeat;
+
+    width: clamp(70px, 5vmax, 130px);
+    height: clamp(70px, 5vmax, 130px);
+    left: clamp(calc(var(--circlel) - 70px), calc(var(--circlel) - 2.25vmax), calc(var(--circlel) - 30px));
+    top: calc(var(--circleh) - 2vmax);
+    border-radius: 50%;
+
+    -webkit-box-sizing: border-box;;
+            box-sizing: border-box;
+
+    z-index: 1;
+
+    -webkit-transition: background 0.25s ease, top 1.25s ease, left 0.9s ease;
+    transition: background 0.25s ease, top 1.25s ease, left 0.9s ease;
+}
+#button:hover{
+    cursor: pointer;
+}
+
+#btnpopup{
+    --popsize: 0rem;
+
+    position: absolute;
+    color: white;
+    font-size: var(--popsize);
+    font-family: 'Amatic SC', monospace;
+
+    text-align: center;
+    top: 25%;
+    width: clamp(70px, 5vmax, 130px);
+
+    transition: all 0.4s ease;
+}
+@media only screen and (max-width:770px){
+    #btnpopup{
+        --popsize: 1.75rem;
+    }
+}
+@media only screeb and (min-width:2000px){
+    #btnpopup{
+        top: 37%;    
+    }
+}
+
+#main {
+    transition: margin-left 0.5s, esae;
+    padding: 35px;
+    overflow-x:hidden;
+}
+
+#main_loader{
+    --mainloaderAlpha: 1;
+
+    position: fixed;
+    width:110vw;
+    height: 150vh;
+    left:0%;
+    top:0%;
+    background-image: url("./resources/main\ black1.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    opacity: var(--mainloaderAlpha);
+
+    overflow: hidden;
+
+    z-index: 2;
+    transition: opacity 1s ease, left .5s ease;
+}
+#main_loader #progress{
+    --mainprogressDeg: 0deg;
+    --progressRad:0%;
+
+    position: relative;
+    width: 12vw;
+    height: 12vw;
+
+    margin:0;
+    left: calc(44% - 6vw);
+    top: calc(49vh - 6vw);
+    background: rgba(107, 107, 107, 0.5);
+
+    transform: perspective(800px) rotateZ(45deg) rotateY(var(--mainprogressDeg)) rotateX(var(--mainprogressDeg));
+    filter: blur(0.3rem);
+
+    border-radius: var(--progressRad);
+
+    transition: transform 1s ease, border-radius 1.5s ease;
+}
+
+
+#main .contents{
+    --imgborderColor: rgb(0,0,0);
+    --imgshadowPosX: 1.5rem;
+    --imgshadowPosY: 1.5rem;
+    margin:4%;
+}
+@media only screen and (min-width: 2000px){
+    #main .contents{
+        margin: 9%;
+        margin-top:6%;
+    }
+}
+@media only screen and (max-width: 500px){
+    #main .contents{
+        margin: 0;
+    }
+}
+
+#main .contents img{
+    box-sizing: border-box;
+    border: 0.25rem solid var(--imgborderColor);
+
+    box-shadow: var(--imgshadowPosX) var(--imgshadowPosY) 2rem rgba(82, 82, 82, 0.781);
+    transition: border 2.5s ease, box-shadow 2.5s ease;
+}
+#main .contents iframe{
+    border: 0.25rem solid var(--imgborderColor);
+    box-shadow: var(--imgshadowPosX) var(--imgshadowPosY) 2rem rgba(95, 95, 95, 0.781);
+    transition: border 2.5s ease, box-shadow 2.5s ease;
+}
+
+#main .contents h1{
+    color: rgb(224, 224, 224);
+}
+#main .contents h4{
+    color: rgb(224, 224, 224);
+}
+
+
+@font-face{
+    font-family: "Tempesta";
+    src: url("./fonts/Tempesta.woff") format("woff"),
+        url("./fonts/Tempesta.ttf") format("truetype");
+}
+
+
+/*content 1*/
+#main .contents #content1 h1{
+    margin-top:2rem;
+    font-size: 2rem;
+    font-weight: 300;
+    font-family: 'JetBrains Mono', monospace;
+}
+@media only screen and (min-width:2000px){
+    #main .contents #content1 h1{
+        font-size: 2.2rem;
+    }
+}
+@media only screen and (max-width:500px){
+    #main .contents #content1 h1{
+        font-size: 1.6rem;
+    }
+}
+
+#main .contents #content1 h4{
+    font-family: 'JetBrains Mono', monospace;
+    margin-bottom: 3rem;
+    font-weight: 100;
+}
+
+#main .contents #content1 iframe{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 5%;
+    border-radius: 12px;
+}
+
+#main .contents #content1 #img-center1{
+    position: relative;
+    margin-bottom: 3.5%;
+    width:100%;
+    border-radius: 12px;
+}
+
+#main .contents #content1 p{
+    font-family: 'JetBrains Mono', monospace;
+    padding: 3% 1% 3% 1%;
+    font-size: 1rem;
+    line-height: 1.36rem;
+    font-weight: 100;
+}
+#main .contents #content1 p a{
+    color: white;
+    text-decoration: underline;
+}
+#main .contents #content1 p a:hover{
+    color: rgb(255, 233, 133);
+    text-decoration: line-through;
+}
+
+@media only screen and (min-width: 2000px){
+    #main .contents #content1 p{
+        font-size: 1.3rem;
+        line-height: 1.65rem;
+    }
+}
+@media only screen and (max-width: 780px){
+    #main .contents #content1 p{
+        padding: 2% 0% 2% 0%;  
+        font-size: 0.86rem;
+    }
+    #main .contents #content1 #img-center1{
+        width:100%;
+    }
+}
+
+
+/*content 2*/
+#main .contents #content2 h1{
+    margin-top:5rem;
+    font-size: 2.1rem;
+    font-family: "Tempesta", monospace;
+    line-height: 5rem;
+}
+@media only screen and (max-width:510px){
+    #main .contents #content2 h1{
+        font-size: 1.87rem;
+    }
+}
+@media only screen and (min-width: 2000px){
+    #main .contents #content2 h1{
+        font-size: 2.7rem;
+    }
+}
+
+#main .contents #content2 #logo{
+    box-shadow: none;
+    border:0;
+    width: 100%;
+    opacity: 0.75;
+}
+
+#main .contents #content2 h4{
+    font-family: "Tempesta", monospace;
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+}
+#main .contents #content2 h3{
+    font-family: "Tempesta", monospace;
+    margin-bottom: 4%;
+    margin-top: 4%;
+}
+
+#main .contents #content2 #img-center1{
+    position: relative;
+    margin-bottom: 3.5%;
+    width:100%;
+}
+
+
+#main .contents #content2 p{
+    position: relative;
+    padding: 3% 0% 3% 0%;
+    font-family: "Tempesta", monospace;
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+#main .contents #content2 p a{
+    color: white;
+    text-decoration: underline;
+}
+#main .contents #content2 p a:hover{
+    color: rgb(255, 233, 133);
+    text-decoration: line-through;
+}
+
+
+@media only screen and (min-width: 2000px){
+    #main .contents #content2 p{
+        font-size: 1.2rem;
+        line-height: 1.7rem;
+    }
+}
+@media only screen and (max-width: 780px){
+    #main .contents #content2 p{
+        padding: 2% 0% 2% 0%;  
+        font-size: 0.75rem;
+    }
+    #main .contents #content2 #img-center1{
+        width:100%;
+    }
+
+}
+
+
+
+#main #openbtn{
+    font-size: 2rem;
+    color: rgb(136, 136, 136);
+    cursor: pointer;
+}
+#main #openbtn:hover{
+    color: rgb(252, 252, 252);
+}
+
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}

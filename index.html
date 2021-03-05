@@ -1,1 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <title>nuobe</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+   <link rel="stylesheet" href="./style.css">
+   <link rel="preconnect" href="https://fonts.gstatic.com">
+   <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Barlow+Semi+Condensed:wght@300;400&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap" rel="stylesheet"></head>
+<body>
+    <div class="bg" id="bg1"></div>
+    <div class="bg" id="bg2"></div>
+    <div class="bg" id="bg3"></div>
+    <div class="bg" id="bg4"></div>
+    <div class="bg" id="bg5"></div>
+
+    <div class="bg" id="loader"></div>
+
+    <div class="header">
+        Zhengzhou<br>Huang<i class="far fa-hand-point-right"></i>
+        <span>黄钲洲</span>
+    </div>
+    
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <defs>
+
+          <filter id="cloudy-0">
+            <feTurbulence id="turbulence" type="fractalNoise" baseFrequency="0.01 0.02" numOctaves="2" result="noise" seed="0"/>
+            <feDisplacementMap id="displacement" in="SourceGraphic" in2="noise" scale="10" />
+          </filter>
+          <filter id="cloudy-1">
+            <feTurbulence id="turbulence" type="fractalNoise" baseFrequency="0.01 0.03" numOctaves="3" result="noise" seed="1"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="12" />
+          </filter>
+          
+          <filter id="cloudy-2">
+            <feTurbulence id="turbulence" type="fractalNoise" baseFrequency="0.02 0.007" numOctaves="3" result="noise" seed="2"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="10" />
+          </filter>
+          <filter id="cloudy-3">
+            <feTurbulence id="turbulence" type="fractalNoise" baseFrequency="0.01 0.025" numOctaves="3" result="noise" seed="3"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="12" />
+          </filter>
+          
+          <filter id="cloudy-4">
+            <feTurbulence id="turbulence" type="fractalNoise" baseFrequency="0.0089 0.02" numOctaves="2" result="noise" seed="4"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="9" />
+          </filter>
+        </defs> 
+      </svg>
+
+    <ul class="menu noselect">
+        <li id="item1">cv</li>
+        <li id="item2">design</li>
+        <li id="item3">past</li>
+        <li id="item4">new</li>
+        <li id="item5">info</li>
+    </ul>
+
+    <div class="noselect" id="button"><div class="tint"></div><div class="btntext">next</div></div>
+
+    <script type="text/javascript" src='./jquery-min.js'></script>
+    <script type="text/javascript" src="./menu.js"></script>
+</body>
+</html>

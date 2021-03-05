@@ -428,7 +428,7 @@ h3{
 }
 @media only screen and (max-width: 500px){
     #main .contents #content1 iframe{
-        margin-left:calc((100% - 25vh)/2);
+        margin-left:calc((100% - 25vh)/2.02);
     }
 }
 @media only screen and (min-width: 2000px){
@@ -955,7 +955,7 @@ h3{
     z-index: 2;
 }
 #main #openbtn:hover{
-    color: rgb(252, 252, 252);
+    color: rgb(92, 168, 255);
 }
 
 @media screen and (max-height: 450px) {

@@ -394,7 +394,7 @@ h3{
     cursor: pointer;
 }
 #main #openbtn:hover{
-    color: rgb(252, 252, 252);
+    color: rgb(92, 168, 255);
 }
 
 @media screen and (max-height: 450px) {

@@ -476,6 +476,13 @@ function main(){
         adjustIframeHeight(iframeToAdjustIndex);
     });
 
+    $(window).on("swipeleft", function(){
+        console.log("!!!");
+        if(navOpen){
+            switchNav();
+        }
+    })
+
     isSecLoaded = false;
     window.requestAnimFrame(mainProgressAnim);
     startLoadSec1($mainloader);

@@ -256,7 +256,6 @@ function main(){
                     e.preventDefault();
                 }
                 currentValue.style.border = `solid 0.13rem ${fontColor}`;
-                directToPages($button);
             });
 
             currentValue.addEventListener("touchend", function(e){
@@ -264,6 +263,7 @@ function main(){
                     e.preventDefault();
                 }
                 currentValue.style.border = `none`;
+                directToPages($button);
             });
         });
 

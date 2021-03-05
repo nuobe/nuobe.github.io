@@ -53,6 +53,8 @@ let userClicked = false;
 let autoFlipStart;
 let autoFlipInterval = 6000;
 
+let lastTouchEvent = undefined;
+
 function startHide(){
     for(var i = 0; i < numofItems; i++){
         var v1 = "--rx" + (i+1);
@@ -263,7 +265,14 @@ function main(){
                     e.preventDefault();
                 }
                 currentValue.style.border = `none`;
-                directToPages($button);
+
+                let endTarget = document.elementFromPoint(
+                    e.changedTouches[0].clientX,
+                    e.changedTouches[0].clientY
+                );
+                if(endTarget.id === e.target.id){
+                    directToPages($button);             
+                }
             });
         });
 

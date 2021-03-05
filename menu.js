@@ -255,7 +255,7 @@ function main(){
                 if(e.cancelable){
                     e.preventDefault();
                 }
-                currentValue.style.border = `solid 0.2rem ${fontColor}`;
+                currentValue.style.border = `solid 0.13rem ${fontColor}`;
                 directToPages($button);
             });
 

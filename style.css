@@ -353,7 +353,7 @@ body{
 }
 .menu li:hover{
     cursor: pointer;
-    border: solid 0.2rem var(--fontcolor); 
+    border: solid 0.13rem var(--fontcolor); 
 }
 
 .menu li#item1{

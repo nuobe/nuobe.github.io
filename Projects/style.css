@@ -973,6 +973,7 @@ h3{
 @media screen and (max-width: 500px){
     body{
         background-image: url("./resources/main\ white2V.jpg");
-        background-size: contain;
+        background-size: cover;
+        background-attachment: fixed;
     }
 }

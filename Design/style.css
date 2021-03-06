@@ -522,3 +522,8 @@ h3{
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
 }
+@media only screen and (max-width: 500px){
+    body {
+        background-image: url("./resources/main\ black1V.jpg");
+    }
+}

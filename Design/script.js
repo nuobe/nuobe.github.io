@@ -574,6 +574,7 @@ $(document).ready(()=>{
     }
     imgs.push("./resources/nav.gif");
     imgs.push("./resources/main\ black1.jpg");
+    imgs.push("./resources/main\ black1V.jpg");
     imgs.push("../imgs/buttonBG.jpg");
     loadImages(imgs, ()=>{
         $("#loader").css("opacity", "0");

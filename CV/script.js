@@ -509,54 +509,22 @@ function main(){
 
     ////////touch events
     //swipe nav left to close
-    let swipeNav = new Swipe("mySidenav");
-    swipeNav.onLeft(function(){
-        if(navOpen){
-            switchNav();
-        }
-    });
-
-    swipeNav.element.addEventListener('touchstart', function(evt) {
-        swipeNav.handleTouchStart(evt);
-    }, false);
-
-    swipeNav.element.addEventListener('touchmove', function(evt) {
-        swipeNav.handleTouchMove(evt);
-    }, false);
-
-    swipeNav.element.addEventListener('touchend', function(evt) {
-        swipeNav.handleTouchEnd(evt);
-    }, false);
-
-    //touch main to close nav
-    document.getElementById("main").addEventListener("touchend", function(e){
-        if(e.target.id !== "openbtn"){
-            e.preventDefault();
+    swipedetect(document.getElementById("mySidenav"), function(swipedir){
+        if(swipedir == 'left'){
             if(navOpen){
                 switchNav();
             }
         }
-    });
+    })
 
     //swipe main to open nav
-    let swipeMain = new Swipe("main");
-    swipeMain.onRight(function(){
-        if(!navOpen){
-            switchNav();
+    swipedetect(document.getElementById("main"), function(swipedir){
+        if(swipedir == 'right'){
+            if(!navOpen){
+                switchNav();
+            }
         }
-    });
-
-    swipeMain.element.addEventListener('touchstart', function(evt) {
-        swipeMain.handleTouchStart(evt);
-    }, false);
-
-    swipeMain.element.addEventListener('touchmove', function(evt) {
-        swipeMain.handleTouchMove(evt);
-    }, false);
-
-    swipeMain.element.addEventListener('touchend', function(evt) {
-        swipeMain.handleTouchEnd(evt);
-    }, false);
+    })
 
     //openbtn touch change color
     let openbtnJS = document.getElementById("openbtn");

@@ -85,97 +85,186 @@ function loadImage(url, callback) {
     }
  }
  
- /************** */
+/************** */
+
+/***********************DETECT SWIPE********************** */
+function swipedetect(el, callback){
+  
+  var touchsurface = el,
+  swipedir,
+  startX,
+  startY,
+  distX,
+  distY,
+  threshold = 150, //required min distance traveled to be considered swipe
+  restraint = 100, // maximum distance allowed at the same time in perpendicular direction
+  allowedTime = 300, // maximum time allowed to travel that distance
+  elapsedTime,
+  startTime,
+  handleswipe = callback || function(swipedir){}
+
+  var movedir, previousMove, currentMove, moveDistX, moveDistY, moveRestraint = 1;
+
+  touchsurface.addEventListener('touchstart', function(e){
+      var touchobj = e.changedTouches[0]
+      swipedir = 'none'
+      movedir = `none`;
+      moveDistX = 0; 
+      moveDistY = 0;
+      dist = 0
+      startX = touchobj.pageX
+      startY = touchobj.pageY
+      startTime = new Date().getTime() // record time when finger first makes contact with surface
+      // if(el !== window && e.target.id !== "openbtn") e.preventDefault()
+  }, false)
+
+  // touchsurface.addEventListener('touchmove', function(e){
+  //     if(el !== window) e.preventDefault() // prevent scrolling when inside DIV
+  //     let touches = e.changedTouches;
+      
+
+  //     let l = touches.length;
+  //     for (let i = 0; i < l; i++){
+  //         if(previousMove === undefined) previousMove = touches[i];
+  //         currentMove = touches[i];
+  //         moveDistX = currentMove.pageX - previousMove.pageX;
+  //         moveDistY = currentMove.pageY - previousMove.pageY;
+
+  //         if(Math.abs(moveDistY) <= moveRestraint && window.innerHeight >= window.innerWidth){
+  //             movedir = (moveDistX < 0) ? `left` : `right`;
+  //         }
+  //         else if(Math.abs(moveDistX) <= moveRestraint && window.innerHeight < window.innerWidth){ 
+  //             movedir = (moveDistY < 0) ? `up` : `down`;
+  //         }
+  //         else movedir = `none`;
+  //         previousMove = currentMove;
+  //         handleswipe(swipedir, movedir);
+  //     }
+  // }, false)
+
+  touchsurface.addEventListener('touchend', function(e){
+      var touchobj = e.changedTouches[0]
+      distX = touchobj.pageX - startX // get horizontal dist traveled by finger while in contact with surface
+      distY = touchobj.pageY - startY // get vertical dist traveled by finger while in contact with surface
+      elapsedTime = new Date().getTime() - startTime // get time elapsed
+      if (elapsedTime <= allowedTime){ // first condition for awipe met
+                                          //&& Math.abs(distY) <= restraint
+          if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint){ // 2nd condition for horizontal swipe met
+              swipedir = (distX < 0)? 'left' : 'right' // if dist traveled is negative, it indicates left swipe
+          }
+          // else if (Math.abs(distY) >= threshold && Math.abs(distX) <= restraint){
+          // else if (Math.abs(distY) >= threshold && window.innerHeight < window.innerWidth){ // 2nd condition for vertical swipe met
+          //     swipedir = (distY < 0)? 'up' : 'down' // if dist traveled is negative, it indicates up swipe
+          // }
+      }
+      // handleswipe(swipedir, movedir);
+         handleswipe(swipedir);
+      // if(el !== window) e.preventDefault()
+  }, false)
+}
+
+//USAGE:
+/*
+var el = document.getElementById('someel')
+swipedetect(el, function(swipedir){
+  swipedir contains either "none", "left", "right", "top", or "down"
+  if (swipedir =='left')
+      alert('You just swiped left!')
+})
+*/
+
+
+
 
  //class for detect touch swipes
- class Swipe {
-  constructor(element) {
-      this.xDown = null;
-      this.yDown = null;
-      this.movedLeft = false;
-      this.movedRight = false;
-      this.element = document.getElementById(element);
-  }
+//  class Swipe {
+//   constructor(element) {
+//       this.xDown = null;
+//       this.yDown = null;
+//       this.movedLeft = false;
+//       this.movedRight = false;
+//       this.element = document.getElementById(element);
+//   }
 
-  getTouches(evt) {
-    return evt.touches ||             // browser API
-           evt.originalEvent.touches; // jQuery
-  }                                                     
+//   getTouches(evt) {
+//     return evt.touches ||             // browser API
+//            evt.originalEvent.touches; // jQuery
+//   }                                                     
   
-  handleTouchStart(evt) {
-      const firstTouch = this.getTouches(evt)[0];                                      
-      this.xDown = firstTouch.clientX;                                      
-      this.yDown = firstTouch.clientY;                                      
-  };   
+//   handleTouchStart(evt) {
+//       const firstTouch = this.getTouches(evt)[0];                                      
+//       this.xDown = firstTouch.clientX;                                      
+//       this.yDown = firstTouch.clientY;                                      
+//   };   
 
-  onLeft(callback) {
-      this.onLeft = callback;
+//   onLeft(callback) {
+//       this.onLeft = callback;
 
-      return this;
-  }
+//       return this;
+//   }
 
-  onRight(callback) {
-      this.onRight = callback;
+//   onRight(callback) {
+//       this.onRight = callback;
 
-      return this;
-  }
+//       return this;
+//   }
 
-  onUp(callback) {
-      this.onUp = callback;
+//   onUp(callback) {
+//       this.onUp = callback;
 
-      return this;
-  }
+//       return this;
+//   }
 
-  onDown(callback) {
-      this.onDown = callback;
+//   onDown(callback) {
+//       this.onDown = callback;
 
-      return this;
-  }
+//       return this;
+//   }
 
-  handleTouchMove(evt) {
-      if ( ! this.xDown || ! this.yDown ) {
-         return;
-      }
+//   handleTouchMove(evt) {
+//       if ( ! this.xDown || ! this.yDown ) {
+//          return;
+//       }
 
-      var xUp = evt.changedTouches[0].clientX;
-      var yUp = evt.changedTouches[0].clientY;
+//       var xUp = evt.changedTouches[0].clientX;
+//       var yUp = evt.changedTouches[0].clientY;
 
-      this.xDiff = this.xDown - xUp;
-      this.yDiff = this.yDown - yUp;
+//       this.xDiff = this.xDown - xUp;
+//       this.yDiff = this.yDown - yUp;
 
-      if ( Math.abs( this.xDiff ) > Math.abs( this.yDiff ) ) { // Most significant.
-          if ( this.xDiff > 0 ) {
-              this.movedLeft = true;
-              this.movedRight = false;
-          } else {
-              this.movedRight = true;
-              this.movedLeft = false;
-          }
-      } else {
-          if ( this.yDiff > 0 ) {
-              ;
-          } else {
-              ;
-          }
-      }
+//       if ( Math.abs( this.xDiff ) > Math.abs( this.yDiff ) ) { // Most significant.
+//           if ( this.xDiff > 0 ) {
+//               this.movedLeft = true;
+//               this.movedRight = false;
+//           } else {
+//               this.movedRight = true;
+//               this.movedLeft = false;
+//           }
+//       } else {
+//           if ( this.yDiff > 0 ) {
+//               ;
+//           } else {
+//               ;
+//           }
+//       }
 
-      // Reset values.
-      this.xDown = null;
-      this.yDown = null;
-  }
+//       // Reset values.
+//       this.xDown = null;
+//       this.yDown = null;
+//   }
 
-  handleTouchEnd(evt){
-    if(this.movedLeft){
-      if(this.onLeft !== undefined){
-        this.onLeft();
-      }
-    }
-    else if(this.movedRight){
-      if(this.onRight !== undefined){
-        this.onRight();
-      }
-    }
-    this.movedLeft = false;
-    this.movedRight = false;
-  }
-}
+//   handleTouchEnd(evt){
+//     if(this.movedLeft){
+//       if(this.onLeft !== undefined){
+//         this.onLeft();
+//       }
+//     }
+//     else if(this.movedRight){
+//       if(this.onRight !== undefined){
+//         this.onRight();
+//       }
+//     }
+//     this.movedLeft = false;
+//     this.movedRight = false;
+//   }
+// }

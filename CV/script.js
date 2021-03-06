@@ -61,9 +61,6 @@ let mainLoaderHTML = `<div id ="main_loader"></div>`;
 function openNav() {
     adjustNav();
     navOpen = true;
-    if(canClickCircle){
-        $circle.css("--circleScale", "3.3");
-    }
   }
   
 function closeNav() {
@@ -117,6 +114,12 @@ function adjustNav(){
     $mainloader.css("width", setLoaderWidth + "vw");
     $mainloader.css("left", set);
     $mainloader.css("height", $mainloader.outerHeight());
+
+    if(navOpen){
+        if(canClickCircle){
+            $circle.css("--circleScale", "3.3");
+        }
+    }
 }
 
 function adjustMainPadding(){

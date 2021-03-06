@@ -19,7 +19,7 @@ let $bg;
 let $btntint;
 let $menuli;
 let $btntext;
-let tintLight = "rgba(194, 217, 255, 0.5)";
+let tintLight = "rgba(209, 233, 255, 0.43)";
 let tintDark = "rgba(255, 243, 78, 0.35)";
 let brightnessContrastLight = "1";
 let brightnessDark = "1.2";

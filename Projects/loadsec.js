@@ -112,7 +112,7 @@ let content3 = new File([`
     Elevator Simulator simulates an experience of taking an elevator.
     <br>
     <br>
-    It is installed in an institutional buidling where the hallways leave spaces
+    It is installed in an institutional building where the hallways leave spaces
     for hideouts. One part of the installation is a tall box with push buttons that
     simulates the function of the push button panel in a real elvator. Different buttons
     lead to different "floor levels". As a "floor" is reached, different videos are 

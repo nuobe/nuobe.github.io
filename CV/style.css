@@ -245,8 +245,8 @@ h3{
 }
 
 #main {
-    -webkit-transition: margin-left 0.5s, esae;
-    transition: margin-left 0.5s, esae;
+    -webkit-transition: margin-left 0.45s ease-in-out, padding 0.25s ease;
+    transition: margin-left 0.45s ease-in-out, padding 0.25s ease;
     padding: 35px;
     overflow-x:hidden;
     z-index: 2;

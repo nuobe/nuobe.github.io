@@ -84,6 +84,8 @@ function switchNav(){
     }
     adjustIframeAnimStart = undefined;
     window.requestAnimFrame(adjustIframeAnim);
+
+    adjustMainPadding();
 }
 
 function adjustNav(){
@@ -110,6 +112,21 @@ function adjustNav(){
     $mainloader.css("width", setLoaderWidth + "vw");
     $mainloader.css("left", set);
     $mainloader.css("height", $mainloader.outerHeight());
+}
+
+function adjustMainPadding(){
+    var winWidth = $(window).width();
+    if(winWidth <= 500){
+        if(navOpen){
+            $main.css("padding", "35px");
+        }
+        else{
+            $main.css("padding", "20px");
+        }
+    }
+    else{
+        $main.css("padding", "35px");
+    }
 }
 
 function calcCircleBGSize(){
@@ -474,6 +491,8 @@ function main(){
         circlepopAutoAdjust();
         
         adjustIframeHeight(iframeToAdjustIndex);
+
+        adjustMainPadding();
     });
 
 

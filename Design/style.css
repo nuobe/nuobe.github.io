@@ -20,7 +20,8 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
     background-color: transparent;
     border-radius: 20px; 
-    box-shadow: inset 2px 2px 5px rgb(75, 75, 75);
+    -webkit-box-shadow: inset 2px 2px 5px rgb(75, 75, 75); 
+            box-shadow: inset 2px 2px 5px rgb(75, 75, 75);
 }
 
 #loader{
@@ -67,23 +68,29 @@ h3{
     background: var(--tintalpha);
     width: clamp(105px, 7.5vmax, 195px);
     height: clamp(105px, 7.5vmax, 195px);
-    transform: translateX(clamp(-18.5px, -1.35vmax, -35.5px)) translateY(clamp(-17.5px, -1.25vmax, -32.5px));
+    -webkit-transform: translateX(clamp(-18.5px, -1.35vmax, -35.5px)) translateY(clamp(-17.5px, -1.25vmax, -32.5px));
+            transform: translateX(clamp(-18.5px, -1.35vmax, -35.5px)) translateY(clamp(-17.5px, -1.25vmax, -32.5px));
     border-radius: 50%;
 
     padding: 0;
     margin: 0;
-    filter:blur(10px);
+    -webkit-filter:blur(10px);
+            filter:blur(10px);
+
+    -webkit-transition: background 3.5s ease;
 
     transition: background 3.5s ease;
 }
 @media only screen and (min-width:1500px){
     .tint{
-        transform: translateX(clamp(-22.5px, -1.5vmax, -40.5px)) translateY(clamp(-22.5px, -1.5vmax, -40.5px));
+        -webkit-transform: translateX(clamp(-22.5px, -1.5vmax, -40.5px)) translateY(clamp(-22.5px, -1.5vmax, -40.5px));
+                transform: translateX(clamp(-22.5px, -1.5vmax, -40.5px)) translateY(clamp(-22.5px, -1.5vmax, -40.5px));
     }
 }
 @media only screen and (min-width:1950px){
     .tint{
-        transform: translateX(clamp(-28.5px, -1.85vmax, -51.5px)) translateY(clamp(-28.5px, -1.85vmax, -51.5px));     
+        -webkit-transform: translateX(clamp(-28.5px, -1.85vmax, -51.5px)) translateY(clamp(-28.5px, -1.85vmax, -51.5px));
+                transform: translateX(clamp(-28.5px, -1.85vmax, -51.5px)) translateY(clamp(-28.5px, -1.85vmax, -51.5px));     
     }
 }
 
@@ -97,6 +104,7 @@ h3{
 
     background-size: cover;
     overflow-x: hidden;
+    -webkit-transition: width 0.5s ease;
     transition: width 0.5s ease;
     padding-top: 60px;
 
@@ -114,7 +122,8 @@ h3{
 .sidenav::-webkit-scrollbar-thumb {
     background-color: transparent;
     border-radius: 20px; 
-    box-shadow: inset 2px 2px 5px rgb(56, 56, 56);
+    -webkit-box-shadow: inset 2px 2px 5px rgb(56, 56, 56); 
+            box-shadow: inset 2px 2px 5px rgb(56, 56, 56);
 }
 
 .navtint{
@@ -133,19 +142,25 @@ h3{
     opacity: var(--navtintalpha);
     /* background: rgba(21, 20, 26, var(--navtintalpha)); */
 
+    -webkit-transition: background 3s ease, width 0.5s ease, opacity 3s ease;
+
     transition: background 3s ease, width 0.5s ease, opacity 3s ease;
 }
 
 .sidenav .navlist {
     --fontcolor: rgb(100, 100, 100);
     padding: 32px 20px 32px 32px;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     text-decoration: none;
 
     color: var(--fontcolor);
     display: block;
+    -webkit-transition: 0.3s;
     transition: 0.3s;
     line-height: normal;
+
+    -webkit-transition: color 0.5s ease;
 
     transition: color 0.5s ease;
 }
@@ -213,6 +228,8 @@ h3{
     top: 25%;
     width: clamp(70px, 5vmax, 130px);
 
+    -webkit-transition: all 0.4s ease;
+
     transition: all 0.4s ease;
 }
 @media only screen and (max-width:770px){
@@ -227,7 +244,8 @@ h3{
 }
 
 #main {
-    transition: margin-left 0.5s, esae;
+    -webkit-transition: margin-left 0.45s ease-in-out, padding 0.25s ease-in-out;
+    transition: margin-left 0.45s ease-in-out, padding 0.25s ease-in-out;
     padding: 35px;
     overflow-x:hidden;
 }
@@ -248,6 +266,7 @@ h3{
     overflow: hidden;
 
     z-index: 2;
+    -webkit-transition: opacity 1s ease, left .5s ease;
     transition: opacity 1s ease, left .5s ease;
 }
 #main_loader #progress{
@@ -263,12 +282,21 @@ h3{
     top: calc(49vh - 6vw);
     background: rgba(107, 107, 107, 0.5);
 
-    transform: perspective(800px) rotateZ(45deg) rotateY(var(--mainprogressDeg)) rotateX(var(--mainprogressDeg));
-    filter: blur(0.3rem);
+    -webkit-transform: perspective(800px) rotateZ(45deg) rotateY(var(--mainprogressDeg)) rotateX(var(--mainprogressDeg));
+
+            transform: perspective(800px) rotateZ(45deg) rotateY(var(--mainprogressDeg)) rotateX(var(--mainprogressDeg));
+    -webkit-filter: blur(0.3rem);
+            filter: blur(0.3rem);
 
     border-radius: var(--progressRad);
 
+    -webkit-transition: border-radius 1.5s ease, -webkit-transform 1s ease;
+
+    transition: border-radius 1.5s ease, -webkit-transform 1s ease;
+
     transition: transform 1s ease, border-radius 1.5s ease;
+
+    transition: transform 1s ease, border-radius 1.5s ease, -webkit-transform 1s ease;
 }
 
 
@@ -291,16 +319,26 @@ h3{
 }
 
 #main .contents img{
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     border: 0.25rem solid var(--imgborderColor);
 
-    box-shadow: var(--imgshadowPosX) var(--imgshadowPosY) 2rem rgba(82, 82, 82, 0.781);
+    -webkit-box-shadow: var(--imgshadowPosX) var(--imgshadowPosY) 2rem rgba(82, 82, 82, 0.781);
+
+            box-shadow: var(--imgshadowPosX) var(--imgshadowPosY) 2rem rgba(82, 82, 82, 0.781);
+    -webkit-transition: border 2.5s ease, -webkit-box-shadow 2.5s ease;
+    transition: border 2.5s ease, -webkit-box-shadow 2.5s ease;
     transition: border 2.5s ease, box-shadow 2.5s ease;
+    transition: border 2.5s ease, box-shadow 2.5s ease, -webkit-box-shadow 2.5s ease;
 }
 #main .contents iframe{
     border: 0.25rem solid var(--imgborderColor);
-    box-shadow: var(--imgshadowPosX) var(--imgshadowPosY) 2rem rgba(95, 95, 95, 0.781);
+    -webkit-box-shadow: var(--imgshadowPosX) var(--imgshadowPosY) 2rem rgba(95, 95, 95, 0.781);
+            box-shadow: var(--imgshadowPosX) var(--imgshadowPosY) 2rem rgba(95, 95, 95, 0.781);
+    -webkit-transition: border 2.5s ease, -webkit-box-shadow 2.5s ease;
+    transition: border 2.5s ease, -webkit-box-shadow 2.5s ease;
     transition: border 2.5s ease, box-shadow 2.5s ease;
+    transition: border 2.5s ease, box-shadow 2.5s ease, -webkit-box-shadow 2.5s ease;
 }
 
 #main .contents h1{
@@ -409,7 +447,8 @@ h3{
 }
 
 #main .contents #content2 #logo{
-    box-shadow: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
     border:0;
     width: 100%;
     opacity: 0.75;

@@ -246,6 +246,11 @@ h3{
     padding: 35px;
     overflow-x:hidden;
 }
+@media only screen and (max-width:500px){
+    #main{
+        padding:10px;
+    }
+}
 
 #main_loader{
     --mainloaderAlpha: 1;
@@ -414,16 +419,16 @@ h3{
         font-size: 0.96rem;
     }
     #main .contents #content1 #img-center1{
-        margin-left: 2.5%;
-        width:95%;
+        margin-left: 0.9%;
+        width:98%;
     }
     #main .contents #content1 #img-center2{
-        margin-left: 2.5%;
-        width:95%;
+        margin-left: 0.9%;
+        width:98%;
     }
     #main .contents #content1 #logo{
-        width: 95%;
-        margin-left: 2%;
+        width: 98%;
+        margin-left: 0.9%;
     }
 }
 @media only screen and (max-width: 500px){
@@ -512,16 +517,19 @@ h3{
         font-size: 1.3rem;
     }
     #main .contents #content2 #img-center1{
-        margin-left: 3.7%;
-        width:95%;
+        margin-left: 1%;
+        width:98%;
     }
     #main .contents #content2 #img-center2{
-        margin-left: 3.7%;
-        width:95%;
+        margin-left: 1%;
+        width:98%;
     }
     #main .contents #content2 #img-center3{
-        margin-left: 3.7%;
-        width:95%;
+        margin-left: 1%;
+        width:98%;
+    }
+    #main .contents #content2 iframe{
+        width: 98%;
     }
 }
 @media only screen and (min-width: 2000px){
@@ -647,6 +655,12 @@ h3{
     #main .contents #content4 #logo{
         margin-left: min(calc((100% - 400px)/2), 25%);
         transform: translateX(-11%);
+    }
+}
+@media only screen and (max-width: 500px){
+    #main .contents #content4 #logo{
+        margin-left: min(calc((100% - 400px)/2), 25%);
+        transform: translateX(-1%);
     }
 }
 

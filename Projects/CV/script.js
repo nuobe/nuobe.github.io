@@ -3,7 +3,7 @@ Number.prototype.map = function (in_min, in_max, out_min, out_max) {
 }
 
 let imgs = []
-let numofNavitems = 7;
+let numofNavitems = 1;
 let folder = "./resources/";
 let cbgname = "cbg";
 let ext = ".jpg";
@@ -16,7 +16,7 @@ let $mainloaderProgress;
 let $openbtn;
 let $circle;
 let $circlepopup;
-let $navitems;
+// let $navitems;
 let $navtint;
 let $circletint;
 
@@ -26,7 +26,7 @@ let progressAnimStart;
 
 let isNavClickable;
 let isNavDark = true;
-let navDark = 0.83;
+let navDark = 0.92;
 let navLight = 0;
 let circleDark = "rgba(216, 188, 61, 0.34)";
 let circleLight = "rgba(35, 139, 236, 0.4)";
@@ -54,13 +54,16 @@ let imgshadow_NumOfPos = 3;
 let canClickCircle = false;
 
 let iframeToAdjustIndex = 1;
-let adjustIframeAnimStart;
+// let adjustIframeAnimStart;
 
 let mainLoaderHTML = `<div id ="main_loader"></div>`;
 
 function openNav() {
     adjustNav();
     navOpen = true;
+    if(canClickCircle){
+        $circle.css("--circleScale", "3.3");
+    }
   }
   
 function closeNav() {
@@ -71,6 +74,9 @@ function closeNav() {
     $mainloader.css("width", "110vw");
     $mainloader.css("left", "0");
     $mainloader.css("height", $mainloader.outerHeight());
+    if(canClickCircle){
+        $circle.css("--circleScale", "1");
+    }
     navOpen = false;
 }
 
@@ -82,19 +88,20 @@ function switchNav(){
         openNav();
     }
 
-    adjustIframeAnimStart = undefined;
-    window.requestAnimFrame(adjustIframeAnim);
+    // adjustIframeAnimStart = undefined;
+    // window.requestAnimFrame(adjustIframeAnim);
+    adjustMainPadding();
 }
 
 function adjustNav(){
     var width = $(window).width();
     
-    var toset = 22;
+    var toset = 40;
     if(width >= 2000){
-        toset = 20;
+        toset = 35;
     }
     else if(width <= 1000 && width > 500){
-        toset = 35;
+        toset = 45;
     }
     else if(width <= 500){
         toset = 70;
@@ -112,34 +119,50 @@ function adjustNav(){
     $mainloader.css("height", $mainloader.outerHeight());
 }
 
-function calcCircleBGSize(){
-    var width = $(window).width();
-    if(width > 1000 && width <= 2000){
-        return "20%"
-    }
-    else if(width <= 1000 && width > 500){
-        return "29%"
-    }
-    else if(width <= 500){
-        return "50%";
+function adjustMainPadding(){
+    var winWidth = $(window).width();
+    if(winWidth <= 500){
+        if(navOpen){
+            $main.css("padding", "35px");
+        }
+        else{
+            $main.css("padding", "20px");
+        }
     }
     else{
-        return "16%";
+        $main.css("padding", "35px");
     }
 }
 
+// function calcCircleBGSize(){
+//     var width = $(window).width();
+//     if(width > 1000 && width <= 2000){
+//         return "20%"
+//     }
+//     else if(width <= 1000 && width > 500){
+//         return "29%"
+//     }
+//     else if(width <= 500){
+//         return "50%";
+//     }
+//     else{
+//         return "16%";
+//     }
+// }
+
 function startCircle(){
     requestTimeout(()=>{
-        $circle.css("--circleh", "65vh");
+        $circle.css("--circleh", "82vh");
     }, 500);
     requestTimeout(()=>{
         if(circleBaseNum === undefined){
-            $circle.css("--circleh", "22.5px");
-            circleBaseNum = 90;
-            $circle.css("background-image", "url('./resources/cbg1.jpg')");
+            $circle.css("--circleh", "45vh");
+            $circle.css("--circleScale", "3.3");
+            circleBaseNum = $(window).height() / 2.1 ;
+            $circle.css("background-image", "url('./resources/cbg1.gif')");
         }
-        $circle.css("background-attachment", "fixed");
-        $circle.css("background-size", calcCircleBGSize());
+        // $circle.css("background-attachment", "fixed");
+        $circle.css("background-size", "cover");
 
         circleNumRand = Math.random() + 0.5;
         circleAnimReq = window.requestAnimFrame(lingerCircle);
@@ -163,7 +186,7 @@ function lingerCircle(timestamp){
     var circleNumX = navWidth / 2;
 
     var numL = circleNumX;
-    numL *= circleNumRand;
+    numL *= (circleNumRand - 0.2);
 
     if(numL <= navWidth * 0.15){
         numL = (circlePos.left - navWidth * 0.5) / (Math.random()+1) + navWidth * 0.5;
@@ -218,28 +241,28 @@ function mainProgressAnim(timestamp){
 }
 
 //move circle to point when click on menu
-function moveCircle(event){
-    circleBaseNum = event.target.offsetTop + event.target.offsetHeight / 2;
-    changeCircleBG(event);
-    checkLightColor();
-}
+// function moveCircle(event){
+//     circleBaseNum = event.target.offsetTop + event.target.offsetHeight / 2;
+//     changeCircleBG(event);
+//     checkLightColor();
+// }
 
-function changeCircleBG(event){
-    var id = event.target.id;
-    var index = id.slice(-1);
-    iframeToAdjustIndex = index;
-    $circle.css("background-image", "url('./resources/" + cbgname + index + ".jpg')");
+// function changeCircleBG(event){
+//     var id = event.target.id;
+//     var index = id.slice(-1);
+//     iframeToAdjustIndex = index;
+//     $circle.css("background-image", "url('./resources/" + cbgname + index + ".jpg')");
 
-    $mainloader.css("z-index", "2");
-    $mainloader.css("--mainloaderAlpha", "1");
+//     $mainloader.css("z-index", "2");
+//     $mainloader.css("--mainloaderAlpha", "1");
 
-    isSecLoaded = false;
-    window.requestAnimFrame(mainProgressAnim);
+//     isSecLoaded = false;
+//     window.requestAnimFrame(mainProgressAnim);
 
-    requestTimeout(function(){
-        loadsections($contentsWraper, index, $mainloader);
-    }, 1100);
-}
+//     requestTimeout(function(){
+//         loadsections($contentsWraper, index, $mainloader);
+//     }, 1100);
+// }
 
 function checkLightColor(){
     if(isNavDark){
@@ -260,14 +283,14 @@ function switchNavTint(timestamp){
         if(!isNavDark){
             $navtint.css("--navtintalpha", `${navDark}`);
             $circletint.css("--tintalpha", circleDark);
-            $navitems.css("--fontcolor", fontDark);
+            // $navitems.css("--fontcolor", fontDark);
             $contentsWraper.css("--imgborderColor", "rgb(0,0,0)");
             isNavDark = true;
         }
         else{
             $navtint.css("--navtintalpha", `${navLight}`);
             $circletint.css("--tintalpha", circleLight);
-            $navitems.css("--fontcolor", fontLight);
+            // $navitems.css("--fontcolor", fontLight);
             $contentsWraper.css("--imgborderColor", "rgb(255,255,255)");
             isNavDark = false;
         }
@@ -280,65 +303,65 @@ function switchNavTint(timestamp){
 }
 
 /*help function to detect if circle and navitems overlap*/
-function collision($div1, $div2) {
-    var x1 = $div1.offset().left;
-    var y1 = $div1.offset().top;
-    var h1 = $div1.outerHeight(true);
-    var w1 = $div1.outerWidth(true);
-    var b1 = y1 + h1;
-    var r1 = x1 + w1;
-    var x2 = $div2.offset().left;
-    var y2 = $div2.offset().top;
-    var h2 = $div2.outerHeight(true);
-    var w2 = $div2.outerWidth(true);
-    var b2 = y2 + h2;
-    var r2 = x2 + w2;
+// function collision($div1, $div2) {
+//     var x1 = $div1.offset().left;
+//     var y1 = $div1.offset().top;
+//     var h1 = $div1.outerHeight(true);
+//     var w1 = $div1.outerWidth(true);
+//     var b1 = y1 + h1;
+//     var r1 = x1 + w1;
+//     var x2 = $div2.offset().left;
+//     var y2 = $div2.offset().top;
+//     var h2 = $div2.outerHeight(true);
+//     var w2 = $div2.outerWidth(true);
+//     var b2 = y2 + h2;
+//     var r2 = x2 + w2;
 
-    if (b1 < y2 || y1 > b2 || r1 < x2 || x1 > r2) return false;
-    return true;
-}
+//     if (b1 < y2 || y1 > b2 || r1 < x2 || x1 > r2) return false;
+//     return true;
+// }
 
-function lightNavitem($element){
-    if(collision($element, $circle)){
-        $element.addClass("light");
-    }
-    else{
-        $element.removeClass("light");
-    }
-}
+// function lightNavitem($element){
+//     if(collision($element, $circle)){
+//         $element.addClass("light");
+//     }
+//     else{
+//         $element.removeClass("light");
+//     }
+// }
 
-function checkTolightNavitems(timestamp){
-    $navitems.each(function(){
-        lightNavitem($(this));
-    });  
+// function checkTolightNavitems(timestamp){
+//     $navitems.each(function(){
+//         lightNavitem($(this));
+//     });  
 
-    window.requestAnimFrame(checkTolightNavitems);
-}
+//     window.requestAnimFrame(checkTolightNavitems);
+// }
 
-function hoverfontIn(){
-    if(isNavDark){
-        $(this).css("--fontcolor", fonthoverDark);
-    }
-    else{
-        $(this).css("--fontcolor", fonthoverLight);
-    }
-}
+// function hoverfontIn(){
+//     if(isNavDark){
+//         $(this).css("--fontcolor", fonthoverDark);
+//     }
+//     else{
+//         $(this).css("--fontcolor", fonthoverLight);
+//     }
+// }
 
-function hoverfontOut(){
-    if(isNavDark){
-        $(this).css("--fontcolor", fontDark);
-    }
-    else{
-        $(this).css("--fontcolor", fontLight);
-    }
-}
+// function hoverfontOut(){
+//     if(isNavDark){
+//         $(this).css("--fontcolor", fontDark);
+//     }
+//     else{
+//         $(this).css("--fontcolor", fontLight);
+//     }
+// }
 
 function circlepopupIn(){
     if($(window).width() > 2000){
-        $circlepopup.css("--popsize", "2.25rem");
+        $circlepopup.css("--popsize", "1.7rem");
     }
     else if($(window).width() > 770 && $(window).width()<=2000){      
-        $circlepopup.css("--popsize", "1.75rem");
+        $circlepopup.css("--popsize", "1.25rem");
     }
     isCirclepop = true;
 }
@@ -352,7 +375,7 @@ function circlepopupOut(){
 
 function circlepopAutoAdjust(){
     if($(window).width() <= 770){ 
-        $circlepopup.css("--popsize", "1.75rem");
+        $circlepopup.css("--popsize", "0.85rem");
     }
     else{
         if(isCirclepop){
@@ -369,6 +392,7 @@ function clickBack(){
     if(canClickCircle){
         window.cancelAnimationFrame(circleAnimReq);
         $circle.css("--circleh", "-25vh");
+        $circle.css("--circleScale", "1");
 
         requestTimeout(()=>{
             window.location.href = "../index.html";
@@ -376,38 +400,38 @@ function clickBack(){
     }
 }
 
-function adjustIframeHeight(index){
-    if(isSecLoaded && index != 1 && index != 5 && index !=4){
-        var selector = iframe_container_pre + index;
-        var iframe = document.getElementById(selector).querySelector("iframe");
+// function adjustIframeHeight(index){
+//     if(isSecLoaded && index != 1){
+//         var selector = iframe_container_pre + index;
+//         var iframe = document.getElementById(selector).querySelector("iframe");
 
-        if(index != 6){
-            var heightToSet = iframe.clientWidth * 9.0 / 16.0;
-            iframe.style.height = heightToSet + "px";
-        }
-        else{
-            var heightToSet = iframe.clientWidth * 0.75;
-            iframe.style.height = heightToSet + "px";
-        }
-    }
-}
+//         if(index != 6){
+//             var heightToSet = iframe.clientWidth * 9.0 / 16.0;
+//             iframe.style.height = heightToSet + "px";
+//         }
+//         else{
+//             var heightToSet = iframe.clientWidth * 0.75;
+//             iframe.style.height = heightToSet + "px";
+//         }
+//     }
+// }
 
-//used after switchNav
-function adjustIframeAnim(timestamp){
-    if(adjustIframeAnimStart === undefined){
-        adjustIframeAnimStart = timestamp;
-    }
+// //used after switchNav
+// function adjustIframeAnim(timestamp){
+//     if(adjustIframeAnimStart === undefined){
+//         adjustIframeAnimStart = timestamp;
+//     }
 
-    adjustIframeHeight(iframeToAdjustIndex);
-    var elapsed = timestamp - adjustIframeAnimStart;
+//     adjustIframeHeight(iframeToAdjustIndex);
+//     var elapsed = timestamp - adjustIframeAnimStart;
 
-    if(elapsed >= 650){
-        adjustIframeAnimStart = timestamp;
-    }
-    else{
-        window.requestAnimFrame(adjustIframeAnim);
-    }
-}
+//     if(elapsed >= 650){
+//         adjustIframeAnimStart = timestamp;
+//     }
+//     else{
+//         window.requestAnimFrame(adjustIframeAnim);
+//     }
+// }
 
 function main(){
     $("#loader").remove();
@@ -422,8 +446,8 @@ function main(){
     $circletint = $(".tint");
     $circlepopup = $("#btnpopup");
 
-    $navitems = $("nav .navlist");
-    $navitems.click(moveCircle);
+    // $navitems = $("nav .navlist");
+    // $navitems.click(moveCircle);
 
     $navtint = $(".navtint");
 
@@ -441,8 +465,8 @@ function main(){
         hasSetOpenBtnOn = false;
     }
 
-    $navitems.hover(hoverfontIn, hoverfontOut);
-    window.requestAnimFrame(checkTolightNavitems);
+    // $navitems.hover(hoverfontIn, hoverfontOut);
+    // window.requestAnimFrame(checkTolightNavitems);
 
     $circle.hover(circlepopupIn, circlepopupOut);
     
@@ -475,12 +499,12 @@ function main(){
 
         if(navOpen){
             adjustNav();
-            $circle.css("background-size", calcCircleBGSize());
+            // $circle.css("background-size", calcCircleBGSize());
         }
         circlepopAutoAdjust();
 
-        adjustIframeHeight(iframeToAdjustIndex);
-
+        // adjustIframeHeight(iframeToAdjustIndex);
+        adjustMainPadding();
     });
 
     ////////touch events
@@ -551,17 +575,20 @@ function main(){
     });
     /////////end touch events
 
+
     isSecLoaded = false;
     window.requestAnimFrame(mainProgressAnim);
     startLoadSec1($mainloader);
 }
 
 $(document).ready(()=>{
-    var i;
-    for(i = 1; i <= numofNavitems; i++){
-        imgs.push(folder + cbgname + i + ext);
-    }
-    imgs.push("./resources/main\ white2.jpg");
+    // var i;
+    // for(i = 1; i <= numofNavitems; i++){
+    //     imgs.push(folder + cbgname + i + ext);
+    // }
+    imgs.push(folder + cbgname + "1" + ".gif");
+    imgs.push("./resources/main\ white3.jpg");
+    imgs.push("./resources/main\ white3V.jpg");
     imgs.push("../imgs/buttonBG.jpg");
     loadImages(imgs, ()=>{
         $("#loader").css("opacity", "0");

@@ -61,6 +61,9 @@ let mainLoaderHTML = `<div id ="main_loader"></div>`;
 function openNav() {
     adjustNav();
     navOpen = true;
+    if(canClickCircle){
+        $circle.css("--circleScale", "3.3");
+    }
   }
   
 function closeNav() {

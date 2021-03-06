@@ -579,6 +579,7 @@ $(document).ready(()=>{
         imgs.push(folder + cbgname + i + ext);
     }
     imgs.push("./resources/main\ white2.jpg");
+    imgs.push("./resources/main\ white2V.jpg");
     imgs.push("../imgs/buttonBG.jpg");
     loadImages(imgs, ()=>{
         $("#loader").css("opacity", "0");

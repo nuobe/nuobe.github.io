@@ -970,10 +970,10 @@ h3{
 @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
 }
-/* @media screen and (max-width: 500px){
+@media screen and (max-width: 500px){
     body{
         background-image: url("./resources/main\ white2V.jpg");
-        background-size: cover;
+        background-size: contain;
         background-attachment: fixed;
     }
-} */
+}

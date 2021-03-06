@@ -430,13 +430,13 @@ function adjustIframeAnim(timestamp){
 function adjustBodyBg(width){
     if(width <= 500){
         if(!setBodyBGV){
-            $("body").css("background-image", `url("./resources/main\ white2V.jpg")`);
+            $("body").css("background-image", `url('./resources/main\ white2V.jpg')`);
             setBodyBGV = true;
         }
     }
     else{
         if(setBodyBGV){
-            $("body").css("background-image", `url("./resources/main\ white2.jpg")`);
+            $("body").css("background-image", `url('./resources/main\ white2.jpg')`);
             setBodyBGV = false;
         }
     }

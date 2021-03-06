@@ -972,9 +972,6 @@ h3{
 }
 @media screen and (max-width: 500px){
     body{
-        /* background-image: url("./resources/main\ white2V.jpg"); */
-        background-image: url("../imgs/bg4s.jpg");
-        background-size: cover;
-        background-attachment: fixed;
+        background-image: url("./resources/main\ white2V.jpg");
     }
 }

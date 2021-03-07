@@ -75,7 +75,7 @@ function closeNav() {
     $mainloader.css("left", "0");
     $mainloader.css("height", $mainloader.outerHeight());
     if(canClickCircle){
-        $circle.css("--circleScale", "1");
+        $circle.css("--circleScale", "0");
     }
     navOpen = false;
 }

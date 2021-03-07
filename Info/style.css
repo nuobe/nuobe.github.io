@@ -365,7 +365,7 @@ h3{
     padding: 7% 5% 5% 5%;
     font-family: 'Cutive Mono', monospace;
     font-size: 1.65rem;
-    line-height: 3.3rem;
+    line-height: 2.85rem;
 }
 
 #main .contents #content1 #logo{
@@ -375,8 +375,9 @@ h3{
 }
 
 #main .contents #content1 .gif{
-    width: 23%;
+    width: max(23%, 135px);
     border-radius: 50%;
+    opacity:0.85;
 }
 
 @media only screen and (max-width: 780px){
@@ -400,7 +401,7 @@ h3{
         margin-left: 54%; 
     }
     #main .contents #content1 .gif{
-        width: 30%;
+        width: 35%;
     }
 }
 @media only screen and (min-width: 2000px){

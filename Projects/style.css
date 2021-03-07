@@ -974,4 +974,7 @@ h3{
     body{
         background-image: url("./resources/main\ white2V.jpg");
     }
+    #main_loader{
+        background-image: url("./resources/main\ white2V.jpg");       
+    }
 }

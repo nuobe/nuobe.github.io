@@ -186,16 +186,16 @@ function directToPages($button){
     requestTimeout(()=>{
 
         if(curIndex === 0){
-            window.location.href = "./CV/index.html";       
+            window.location.href = "./CV";       
         }
         else if(curIndex === 1){
-            window.location.href = "./Design/index.html";
+            window.location.href = "./Design";
         }
         else if(curIndex === 2){
-            window.location.href = "./Projects/index.html";
+            window.location.href = "./Projects";
         }
         else if(curIndex === 3){
-            window.location.href = "./New/index.html";
+            window.location.href = "./New";
         }
         else if(curIndex === 4){
             window.location.href = "./Info";

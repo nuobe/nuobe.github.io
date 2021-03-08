@@ -363,7 +363,7 @@ h3{
 #main .contents #content1 p{
     position: relative;
     padding: 7% 5% 5% 5%;
-    font-family: 'Cutive Mono', monospace;
+    font-family: 'VT323', monospace;
     font-size: 1.65rem;
     line-height: 2.85rem;
 }
@@ -383,7 +383,7 @@ h3{
 @media only screen and (max-width: 780px){
     #main .contents #content1 p{
         padding: 15% 2.5% 5% 2.5%;  
-        font-size: 1.3rem;
+        font-size: 1.28rem;
         line-height: 3rem;
     }
     #main .contents #content1 #logo{
@@ -406,7 +406,7 @@ h3{
 }
 @media only screen and (min-width: 2000px){
     #main .contents #content1 p{
-        font-size: 1.9rem;
+        font-size: 2.0rem;
     }
     #main .contents #content1 #logo{
         width: 18%;

@@ -198,7 +198,7 @@ function directToPages($button){
             window.location.href = "./New/index.html";
         }
         else if(curIndex === 4){
-            window.location.href = "./Info/index.html";
+            window.location.href = "./Info";
         }
     }, 1800);
 }

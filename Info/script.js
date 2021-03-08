@@ -52,6 +52,7 @@ let imgshadowIndex = 0;
 let imgshadow_NumOfPos = 3;
 
 let canClickCircle = false;
+let canFoldNav= false;
 
 let iframeToAdjustIndex = 1;
 // let adjustIframeAnimStart;
@@ -174,6 +175,9 @@ function startCircle(){
         circleAnimReq = window.requestAnimFrame(lingerCircle);
 
         canClickCircle = true;
+        requestTimeout(()=>{
+            canFoldNav = true;
+        }, 1000);
     }, 1700);
 }
 
@@ -460,7 +464,11 @@ function main(){
     //first ready set side nav and nav button
     var width = $(this).width();
     if(width <= 1000){
-        $openbtn.click(switchNav);
+        $openbtn.click(()=>{
+            if(canFoldNav){
+                switchNav();
+            }
+        });
         $openbtn.html("&#9776;");
         $openbtn.css("cursor", "pointer");
         hasSetOpenBtnOn = true;
@@ -518,7 +526,7 @@ function main(){
     //swipe nav left to close
     swipedetect(document.getElementById("mySidenav"), function(swipedir){
         if(swipedir == 'left'){
-            if(navOpen){
+            if(navOpen && canFoldNav){
                 switchNav();
             }
         }
@@ -527,7 +535,7 @@ function main(){
     //swipe main to open nav
     swipedetect(document.getElementById("main"), function(swipedir){
         if(swipedir == 'right'){
-            if(!navOpen){
+            if(!navOpen && canFoldNav){
                 switchNav();
             }
         }
@@ -546,7 +554,9 @@ function main(){
             e.preventDefault();
         }
         $openbtn.css("color", "rgb(41, 41, 41)");
-        switchNav();
+        if(canFoldNav){
+            switchNav();
+        }
     });
     /////////end touch events
 

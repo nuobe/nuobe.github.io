@@ -388,7 +388,7 @@ function clickBack(){
         $circle.css("--circleh", "-25vh");
 
         requestTimeout(()=>{
-            window.location.href = "../";
+            window.location.href = "/";
         }, 1400);
     }
 }

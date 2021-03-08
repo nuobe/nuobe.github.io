@@ -405,7 +405,7 @@ function clickBack(){
         $circle.css("--circleScale", "1");
 
         requestTimeout(()=>{
-            window.location.href = "../";
+            window.location.href = "/";
         }, 1400);
     }
 }

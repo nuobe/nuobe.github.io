@@ -192,7 +192,7 @@ function directToPages($button){
             window.location.href = "./Design";
         }
         else if(curIndex === 2){
-            window.location.href = "./Projects";
+            window.location.href = "./Past";
         }
         else if(curIndex === 3){
             window.location.href = "./New";

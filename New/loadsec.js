@@ -92,8 +92,9 @@ let content2 = new File([`
     photos for making the posters.
     <br>
     <br>
-    <i class="fas fa-piggy-bank"></i> Link to <a target="_blank" href="https://pigxell.biz/">play online</a>
+    <i class="fas fa-piggy-bank"></i> Link to <a target="_blank" href="https://pigxell.biz/">play online</a> (might experience slow loading. If so, please download the game below.)
     <br>
+    <i class="fas fa-piggy-bank"></i> Link to <a target="_blank" href="https://nuobe.itch.io/pigxell">download <em>Pigxell</em></a>
     <i class="fas fa-piggy-bank"></i> Link to <a target="_blank" href="https://pigxell.biz/phone">see posters on the pig's phone</a>
     <br>
     <i class="fas fa-piggy-bank"></i> Featured in online show <a target="_blank" href="http://projects.dma.ucla.edu/exhibitions/sharescreen/index.php/2020/10/13/zhengzhou/"><em>Share Screen</em></a>

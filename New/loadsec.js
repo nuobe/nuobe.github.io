@@ -149,16 +149,19 @@ let content2 = new File([`
     <br>
 </p>      
 <h3>
-    P o s t e r s :
+    The Pig's Phone :
 </h3>
-<img id="img-center1" src="resources/Pigxell/p15.gif">
+<p id="posterparagraph">
+    The Pig's Phone is a website dedicated to show posters made by the performer.
+</p>
+<img id="img-center1-2" src="resources/Pigxell/p15.gif">
 <img id="img-center1" src="resources/Pigxell/p7.jpg">
 <img id="img-center1" src="resources/Pigxell/p8.jpg">
 <img id="img-center1" src="resources/Pigxell/p9.jpg">
 <img id="img-center1" src="resources/Pigxell/p10.jpg">
 <img id="img-center1" src="resources/Pigxell/p11.jpg">
 <img id="img-center1" src="resources/Pigxell/p12.jpg">
-<iframe
+<iframe id="posteriframe" 
     src="https://www.youtube.com/embed/dwflIhjpTXU" frameborder="0" 
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
@@ -177,7 +180,7 @@ let filesToRead = [content1, content2];
 let imgsToLoad = [13, 14];
 let foldernames = ["Air/", "Pigxell/"];
 let masterFolder = "./resources/";
-let other = ["./resources/Air/logo.png", "./resources/Pigxell/logo.png"];
+let other = ["./resources/Air/logo.png", "./resources/Pigxell/logo.png", "./resources/Pigxell/p15.gif"];
 
 const iframe_container_pre = "content"; 
 
@@ -187,7 +190,7 @@ function adjustIframeHeightPreloadImage(index){
     var selector = iframe_container_pre + index;
     var iframes = document.getElementById(selector).querySelectorAll("iframe");
 
-    iframes,forEach(function(iframe){
+    iframes.forEach(function(iframe){
         var heightToSet = iframe.clientWidth * 9.0 / 16.0;
         iframe.style.height = heightToSet + "px";
     });

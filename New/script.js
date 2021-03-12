@@ -398,7 +398,7 @@ function adjustIframeHeight(index){
         var selector = iframe_container_pre + index;
         var iframes = document.getElementById(selector).querySelectorAll("iframe");
 
-        iframes,forEach(function(iframe){
+        iframes.forEach(function(iframe){
             var heightToSet = iframe.clientWidth * 9.0 / 16.0;
             iframe.style.height = heightToSet + "px";
         });

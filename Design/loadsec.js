@@ -18,6 +18,8 @@ let content1 = new File([`
 </p>
 <img id="img-center1" src="./resources/Storytelling/p2.jpg">
 <img id="img-center1" src="./resources/Storytelling/p3.jpg">
+<img id="img-center1" src="./resources/Storytelling/p5.jpg">
+<img id="img-center1" src="./resources/Storytelling/p4.jpg">
 </div> 
 `], "content1");
 
@@ -49,7 +51,7 @@ let content2 = new File([`
 `], "content2");
 
 let filesToRead = [content1, content2];
-let imgsToLoad = [3, 7];
+let imgsToLoad = [5, 7];
 let foldernames = ["Storytelling/", "ShareScreen/"];
 let masterFolder = "./resources/";
 

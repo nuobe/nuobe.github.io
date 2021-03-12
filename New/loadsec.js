@@ -151,12 +151,17 @@ let content2 = new File([`
 <h3>
     P o s t e r s :
 </h3>
+<img id="img-center1" src="resources/Pigxell/p15.gif">
 <img id="img-center1" src="resources/Pigxell/p7.jpg">
 <img id="img-center1" src="resources/Pigxell/p8.jpg">
 <img id="img-center1" src="resources/Pigxell/p9.jpg">
 <img id="img-center1" src="resources/Pigxell/p10.jpg">
 <img id="img-center1" src="resources/Pigxell/p11.jpg">
 <img id="img-center1" src="resources/Pigxell/p12.jpg">
+<iframe
+    src="https://www.youtube.com/embed/dwflIhjpTXU" frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
 <p id="p-sep">
     .<br>
     .<br>
@@ -180,10 +185,12 @@ var isSecLoaded;
 
 function adjustIframeHeightPreloadImage(index){
     var selector = iframe_container_pre + index;
-    var iframe = document.getElementById(selector).querySelector("iframe");
+    var iframes = document.getElementById(selector).querySelectorAll("iframe");
 
-    var heightToSet = iframe.clientWidth * 9.0 / 16.0;
-    iframe.style.height = heightToSet + "px";
+    iframes,forEach(function(iframe){
+        var heightToSet = iframe.clientWidth * 9.0 / 16.0;
+        iframe.style.height = heightToSet + "px";
+    });
 }
 
 function loadsections(wraper, index, mainloader){

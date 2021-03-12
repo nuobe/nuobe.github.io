@@ -396,10 +396,12 @@ function clickBack(){
 function adjustIframeHeight(index){
     if(isSecLoaded){
         var selector = iframe_container_pre + index;
-        var iframe = document.getElementById(selector).querySelector("iframe");
+        var iframes = document.getElementById(selector).querySelectorAll("iframe");
 
-        var heightToSet = iframe.clientWidth * 9.0 / 16.0;
-        iframe.style.height = heightToSet + "px";
+        iframes,forEach(function(iframe){
+            var heightToSet = iframe.clientWidth * 9.0 / 16.0;
+            iframe.style.height = heightToSet + "px";
+        });
     }
 }
 

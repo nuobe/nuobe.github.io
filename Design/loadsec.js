@@ -29,8 +29,7 @@ let content2 = new File([`
 <h4>2 0 2 0</h4>
 <img id="img-center1" src="./resources/ShareScreen/p1.jpg">
 <p>
-    Share Screen is an online show featuring MFA students in Design Media Arts Department at UCLA. I worked
-    on the graphics for the main page of this website. For this show, I worked with a team to make the show
+    Share Screen is an online show featuring MFA students in Design Media Arts Department at UCLA. For this show, I worked with a team to make the show
     website and I contributed mainly on the graphics and mobile compatibility of the home page.
     <br><br>
     .

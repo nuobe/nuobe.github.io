@@ -4,13 +4,11 @@ let content1 = new File([`
 <h4>2 0 2 1</h4>
 <img id="logo" src="resources/Air/logo.png">
 <p>
-Air is a 360 video that shows three days of a person living with an AI system. In the situation where 
-    artificial superintelligence (ASI) evolves into an alternative natural system, Air helps us understand 
-    and predict events and disasters happening in this secondary nature. Inspired by Nora Khan's article, 
-    <a href="https://medium.com/after-us/towards-a-poetics-of-artificial-superintelligence-ebff11d2d249">
-        <em>Towards a Poetics of Artificial Superintelligence</em></a>, Air depicts moments of time, 
-        body and activities compressed and overlapped, in which our data are transformed and 
-        transmediated to parts of a weather system.    <br>
+    In a speculative world where planet-scale ASI (artificial superintelligence) acts as a natrual system, 
+    Air is a 360 video depicting three days of a person living with a virtual assistant who helps you avoid 
+    disasters in this secondary nature. Three mornings is compressed into 16 minutes where time, body, data 
+    and intellegence are overlapped and displaced.    
+    <br>
     <br>
     Air is a collaboration by Zhengzhou and Zhengyang Huang.
     <br>

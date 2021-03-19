@@ -7,7 +7,7 @@ let content1 = new File([`
     In a speculative world where planet-scale ASI (artificial superintelligence) acts as a natrual system, 
     Air is a 360 video depicting three days of a person living with a virtual assistant who helps you avoid 
     disasters in this secondary nature. Three mornings is compressed into 16 minutes where time, body, data 
-    and intellegence are overlapped and displaced.    
+    and intelligence are overlapped and displaced.    
     <br>
     <br>
     Air is a collaboration by Zhengzhou and Zhengyang Huang.

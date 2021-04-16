@@ -12,6 +12,8 @@ body{
     font-size: 3.25rem;
     font-family: 'Cutive Mono', monospace;
     color: rgb(126, 115, 79);
+
+    margin:0;
 }
 .header > span{
     line-height: 1.5rem;

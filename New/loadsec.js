@@ -4,13 +4,10 @@ let content1 = new File([`
 <h4>2 0 2 1</h4>
 <img id="logo" src="resources/Air/logo.png">
 <p>
-    In a speculative world where planet-scale ASI (artificial superintelligence) acts as a natural system, 
-    Air is a 360 video depicting three days of a person living with a virtual assistant who helps you avoid 
-    disasters in this secondary nature. Three mornings are compressed into 16 minutes where time, body, data 
-    and intelligence are overlapped and displaced.    
+<em>Air</em> imagines a speculative world where planetary-scale computation acts like a natural system. In this world, Air is a smart home device that uses the aerial particle system to help people understand data flow in their quantified surroundings which is impossible to sense or recognize. This work is an online user manual leading to a VR video that depicts three mornings of a person waking up to interact with Air. In this video, time, body, data and intelligence are overlapped and displaced. 
     <br>
     <br>
-    Air is a collaboration by Zhengzhou and Zhengyang Huang.
+    <em>Air</em> is part of the series, <em>Air Water Fire Earth</em>, by Zhengzhou and Zhengyang Huang.
     <br>
     <br>
     .
@@ -21,10 +18,8 @@ let content1 = new File([`
     <br>
     <br>
     <i class="fas fa-wind"></i> Link to 
-    <a target="_blank" href="https://projects.dma.ucla.edu/exhibitions/SoloShows2021/ZhengyangHuang/">flip book</a>
+    <a target="_blank" href="http://projects.dma.ucla.edu/exhibitions/mfa2021/air/"><em>Air<em></a>
     <br>
-    <i class="fas fa-wind"></i> Link to 
-    <a target="_blank" href="https://www.youtube.com/watch?v=Ci8S2Tn9S8U&t=4s">video</a>
 </p>
 <img id="img-center1" src="resources/Air/p1.png">
 <p id="quote">
@@ -71,13 +66,66 @@ let content1 = new File([`
 `], "content1");
 
 let content2 = new File([`
+<div id="content2">
+<h1>Water</h1>
+<p>
+<em>Water</em> is an imaginary data structure for people to store, share, and delete their data. Inspired by the history and practice of water memory, this work imagines an unstable data structure as an alternative to the stable stacks of computer memory and its clear interface of data interaction. Moving away from the networks of massive data collection and analysis, Water speculates the life cycles of data within the cycles of water transformations among solid, liquid, and gas. By introducing ambiguous mechanism and interface, Water empowers one’s relationship with their own data. 
+<br>
+<br>
+<em>Water</em> is part of the series, <em>Air Water Fire Earth</em>, by Zhengzhou and Zhengyang Huang.
+<br>
+<br>
+.
+<br>
+.
+<br>
+.
+<br>
+<br>
+<i class="fas fa-hockey-puck"></i> Link to 
+<a target="_blank" href="http://projects.dma.ucla.edu/exhibitions/mfa2021/water/"><em>Water<em></a>
+<br>
+</p>
+<iframe style="background:white;"
+    src="http://projects.dma.ucla.edu/exhibitions/mfa2021/water/" frameborder="0">
+</iframe>
+</div>
 `], "content2");
 
 let content3 = new File([`
+<div id="content3">
+<h1>Fire</h1>
+<p>
+<strong><em>Fire</em></strong> is a GPU kit that exists outside of computers.<br>
+<strong><em>Fire</em></strong> is NOT energy efficient and only runs ONCE.<br>
+<br>
+In a situation where mineral and chemical based GPUs run out, <em>Fire</em> as a wood based GPU is the only type available for AI training. <em>Fire</em> GPU kit is made out of 4 panels of wooden equilateral triangles with etchings of machine learning scripts and data inputs. With <em>Fire</em>, the process of training AI via heating up GPU chips becomes a visceral experience of burning data and computer programs on wood.
+<br><br>
+<em>Fire</em> imagines a hard limit on the powerful technology involved with GPU. Unlike a mineral and chemical based GPU that can run a million iterations over thousands of data inputs for AI to learn, <strong>ONE</strong> <em>Fire</em> GPU kit can only run <strong>ONE</strong> iteration of training with a limited number of data specified. The amount of data that can be learned by AI corresponds to the size of the wood to be burned and thus the harm it will do to the environment. <em>Fire</em> provides a situation where the data put into AI and the purpose of training it should be carefully considered. 
+<br>
+<br>
+<em>Fire</em> is part of the series, <em>Air Water Fire Earth</em>, by Zhengzhou and Zhengyang Huang.
+<br>
+<br>
+.
+<br>
+.
+<br>
+.
+<br>
+<br>
+<i class="fas fa-fire"></i> Link to 
+<a target="_blank" href="http://projects.dma.ucla.edu/exhibitions/mfa2021/fire/"><em>Fire<em></a>
+<br>
+</p>
+<iframe style="background:black;"
+    src="http://projects.dma.ucla.edu/exhibitions/mfa2021/fire/" frameborder="0">
+</iframe>
+</div>
 `], "content3");
 
 let content4 = new File([`
-<div id="content2">
+<div id="content4">
 <h1>P i g x e l l</h1>
 <h4>2 0 2 0</h4>
 <img id="logo" src="./resources/Pigxell/logo.png">
@@ -181,8 +229,8 @@ let content4 = new File([`
 `], "content4");
 
 let filesToRead = [content1, content2, content3, content4];
-let imgsToLoad = [13, 14];
-let foldernames = ["Air/", "Pigxell/"];
+let imgsToLoad = [13, 0, 0, 14];
+let foldernames = ["Air/", "", "", "Pigxell/"];
 let masterFolder = "./resources/";
 let other = ["./resources/Air/logo.png", "./resources/Pigxell/logo.png", "./resources/Pigxell/p15.gif"];
 
@@ -217,7 +265,22 @@ function loadsections(wraper, index, mainloader){
 
         adjustIframeHeightPreloadImage(index);
 
-        loadImages(imgs, function(){
+        if(imgs.length > 0){
+            loadImages(imgs, function(){
+                mainloader.css("--mainloaderAlpha", "0");
+                requestTimeout(()=>{
+                    mainloader.css("z-index", "-2");
+                    isSecLoaded = true;
+
+                    requestTimeout(()=>{
+                        if(isNavClickable && navOpen){
+                            switchNav();
+                        }
+                    }, 10);
+                }, 500);
+            });
+        }
+        else{
             mainloader.css("--mainloaderAlpha", "0");
             requestTimeout(()=>{
                 mainloader.css("z-index", "-2");
@@ -229,7 +292,7 @@ function loadsections(wraper, index, mainloader){
                     }
                 }, 10);
             }, 500);
-        });
+        }
     }
 
     fr.readAsText(filesToRead[index - 1]);

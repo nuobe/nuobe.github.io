@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
+
 html{
     scroll-behavior: smooth;
 }
@@ -372,6 +374,21 @@ h3{
     src: url("./fonts/PixelSimple.woff") format("woff"),
          url("./fonts/PixelSimple.ttf") format("truetype");
 }
+@font-face {
+    font-family: 'marola';
+    src: url('./fonts/marola.woff2') format('woff2'),
+         url('./fonts/marola.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face{
+    font-family: 'para';
+    src: url('./fonts/AveriaSans-Regular.woff2') format('woff2'),
+         url('./fonts/AveriaSans-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 /*content 1*/
 #main .contents #content1 h1{
@@ -462,7 +479,7 @@ h3{
 @media only screen and (max-width: 780px){
     #main .contents #content1 p{
         padding: 2% 0% 2% 0%;  
-        font-size: 0.96rem;
+        font-size: 1.05rem;
     }
     #main .contents #content1 #img-center1{
         margin-left: 0;
@@ -478,97 +495,25 @@ h3{
     }
 }
 
-
-/*content 2*/
+/*cotent 2*/
 #main .contents #content2 h1{
-    margin-top:5rem;
-    font-size: 2.5rem;
-    font-weight: 300;
-    font-family: "LCD", monospace;
-    line-height: 5rem;
+    margin-top:2rem;
+    font-size: 4.5rem;
+    font-family: 'marola', monospace;
 }
-@media only screen and (max-width:510px){
+@media only screen and (max-width:500px){
     #main .contents #content2 h1{
-        font-size: 1.2rem;
-        line-height: 3rem;
+        font-size: 3.6rem;
     }
-}
-
-#main .contents #content2 #logo{
-    -webkit-box-shadow: none;
-            box-shadow: none;
-    border:0;
-    width: 100%;
-    opacity: 0.75;
-}
-
-#main .contents #content2 h4{
-    font-family: "Highway", monospace;
-    margin-bottom: 3rem;
-    margin-top: 3rem;
-}
-#main .contents #content2 h3{
-    font-family: "LCD", monospace;
-    margin-bottom: 4%;
-    margin-top: 4%;
-}
-
-#main .contents #content2 iframe{
-    position: relative;
-    width: 94%;
-    height: 100%;
-    margin-bottom: 5%;
-    margin-left: 2.5%;
-}
-
-#main .contents #content2 #posteriframe{
-    position: relative;
-    width: 94.5%;
-    height: 100%;
-    margin-bottom: 5%;
-    margin-left: 4%;
-}
-
-#main .contents #content2 #img-center1{
-    position: relative;
-    margin-left: 4%;
-    margin-bottom: 3.5%;
-    width:45%;
-}
-
-#main .contents #content2 #img-center1-2{
-    position: relative;
-    margin-left: 4%;
-    margin-bottom: 3.5%;
-    width:94.5%;
-}
-
-#main .contents #content2 #img-center2{
-    position: relative;
-    margin-bottom: 3.5%;
-    margin-left:2.5%;
-    width:95%;
-}
-
-#main .contents #content2 #img-center3{
-    position: relative;
-    width:40%;
-    margin-left: 30%;
 }
 
 #main .contents #content2 p{
     position: relative;
-    padding: 3% 0% 3% 0%;
-    font-family: 'PixelSimple', monospace;
-    font-size: 1.6rem;
+    padding: 5% 1% 5% 1%;
+    line-height: 1.85rem;
+    font-family: 'para', serif;
+    font-size: 1.45rem;
 }
-#main .contents #content2 #posterparagraph{
-    position: relative;
-    padding: 3% 0% 3% 4%;
-    font-family: 'PixelSimple', monospace;
-    font-size: 1.6rem;
-}
-
 #main .contents #content2 p a{
     color: white;
     text-decoration: underline;
@@ -577,7 +522,175 @@ h3{
     color: rgb(255, 233, 133);
     text-decoration: line-through;
 }
-#main .contents #content2 #quote{
+
+#main .contents #content2 iframe{
+    width:100%;
+    height: 100%;
+    margin-bottom: 5%;
+}
+
+@media only screen and (max-width: 1920px){
+    #main .contents #content2 p{
+        font-size: 1.3rem;
+    }
+}
+@media only screen and (max-width: 780px){
+    #main .contents #content2 p{
+        padding: 3% 0% 3% 0%;  
+        font-size: 1.15rem;
+        line-height: 1.5rem;
+    }
+}
+
+
+/*cotent 3*/
+#main .contents #content3 h1{
+    margin-top:2rem;
+    font-size: 4.5rem;
+    font-style: italic;
+    font-weight: bold;
+    font-family: 'Fira Code', monospace;
+}
+@media only screen and (max-width:500px){
+    #main .contents #content3 h1{
+        font-size: 3.6rem;
+    }
+}
+
+#main .contents #content3 p{
+    position: relative;
+    padding: 5% 1% 5% 1%;
+    line-height: 1.85rem;
+    font-family: 'Fira Code', serif;
+    font-size: 1.3rem;
+}
+#main .contents #content3 p a{
+    color: white;
+    text-decoration: underline;
+}
+#main .contents #content3 p a:hover{
+    color: rgb(255, 233, 133);
+    text-decoration: line-through;
+}
+
+#main .contents #content3 iframe{
+    width:100%;
+    height: 100%;
+    margin-bottom: 5%;
+}
+
+@media only screen and (max-width: 1920px){
+    #main .contents #content3 p{
+        font-size: 1.15rem;
+    }
+}
+@media only screen and (max-width: 780px){
+    #main .contents #content3 p{
+        padding: 3% 0% 3% 0%;  
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+}
+
+/*content 4*/
+#main .contents #content4 h1{
+    margin-top:5rem;
+    font-size: 2.5rem;
+    font-weight: 300;
+    font-family: "LCD", monospace;
+    line-height: 5rem;
+}
+@media only screen and (max-width:510px){
+    #main .contents #content4 h1{
+        font-size: 1.2rem;
+        line-height: 3rem;
+    }
+}
+
+#main .contents #content4 #logo{
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    border:0;
+    width: 100%;
+    opacity: 0.75;
+}
+
+#main .contents #content4 h4{
+    font-family: "Highway", monospace;
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+}
+#main .contents #content4 h3{
+    font-family: "LCD", monospace;
+    margin-bottom: 4%;
+    margin-top: 4%;
+}
+
+#main .contents #content4 iframe{
+    position: relative;
+    width: 94%;
+    height: 100%;
+    margin-bottom: 5%;
+    margin-left: 2.5%;
+}
+
+#main .contents #content4 #posteriframe{
+    position: relative;
+    width: 94.5%;
+    height: 100%;
+    margin-bottom: 5%;
+    margin-left: 4%;
+}
+
+#main .contents #content4 #img-center1{
+    position: relative;
+    margin-left: 4%;
+    margin-bottom: 3.5%;
+    width:45%;
+}
+
+#main .contents #content4 #img-center1-2{
+    position: relative;
+    margin-left: 4%;
+    margin-bottom: 3.5%;
+    width:94.5%;
+}
+
+#main .contents #content4 #img-center2{
+    position: relative;
+    margin-bottom: 3.5%;
+    margin-left:2.5%;
+    width:95%;
+}
+
+#main .contents #content4 #img-center3{
+    position: relative;
+    width:40%;
+    margin-left: 30%;
+}
+
+#main .contents #content4 p{
+    position: relative;
+    padding: 3% 0% 3% 0%;
+    font-family: 'PixelSimple', monospace;
+    font-size: 1.6rem;
+}
+#main .contents #content4 #posterparagraph{
+    position: relative;
+    padding: 3% 0% 3% 4%;
+    font-family: 'PixelSimple', monospace;
+    font-size: 1.6rem;
+}
+
+#main .contents #content4 p a{
+    color: white;
+    text-decoration: underline;
+}
+#main .contents #content4 p a:hover{
+    color: rgb(255, 233, 133);
+    text-decoration: line-through;
+}
+#main .contents #content4 #quote{
     position: relative;
     margin-left: 20%;
     margin-right:20%;
@@ -587,7 +700,7 @@ h3{
     padding: 0% 0% 0% 0%;
 }
 
-#main .contents #content2 #p-sep{
+#main .contents #content4 #p-sep{
     font-family: "PixelSimple", monospace;
     font-size: 3.6rem;
     text-align: center;
@@ -595,50 +708,50 @@ h3{
     margin:0;
 }
 @media only screen and (min-width: 2000px){
-    #main .contents #content2 #p-sep{
+    #main .contents #content4 #p-sep{
         font-size: 4.5rem;
     }
-    #main .contents #content2 p{
+    #main .contents #content4 p{
         font-size: 1.8rem;
     }
-    #main .contents #content2 #quote{
+    #main .contents #content4 #quote{
         font-size: 1.8rem;    
     }
 }
 @media only screen and (max-width: 780px){
-    #main .contents #content2 p{
+    #main .contents #content4 p{
         padding: 2% 0% 2% 0%;  
         font-size: 1.35rem;
     }
-    #main .contents #content2 #posterparagraph{
+    #main .contents #content4 #posterparagraph{
         padding: 2% 0% 2% 0%;  
         font-size: 1.35rem;
     }
-    #main .contents #content2 #img-center1{
+    #main .contents #content4 #img-center1{
         margin-left: 0;
         width:100%;
     }
-    #main .contents #content2 #img-center1-2{
+    #main .contents #content4 #img-center1-2{
         margin-left: 0;
         width:100%;
     }
-    #main .contents #content2 #img-center2{
+    #main .contents #content4 #img-center2{
         margin-left: 0;
         width:100%;
     }
-    #main .contents #content2 #img-center3{
+    #main .contents #content4 #img-center3{
         width: 100%;
         margin-left:0;
     }
-    #main .contents #content2 iframe{
+    #main .contents #content4 iframe{
         margin-left: 0;
         width:98%; 
     }
-    #main .contents #content2 #posteriframe{
+    #main .contents #content4 #posteriframe{
         width:98%; 
         margin-left: 0;
     }
-    #main .contents #content2 #quote{
+    #main .contents #content4 #quote{
         margin-left: 0%;
         margin-right:0%;
         font-size: 1.35rem;

@@ -71,6 +71,12 @@ let content1 = new File([`
 `], "content1");
 
 let content2 = new File([`
+`], "content2");
+
+let content3 = new File([`
+`], "content3");
+
+let content4 = new File([`
 <div id="content2">
 <h1>P i g x e l l</h1>
 <h4>2 0 2 0</h4>
@@ -172,9 +178,9 @@ let content2 = new File([`
 <img id="img-center3" src="resources/Pigxell/p13.jpg">
 </div>  
 
-`], "content2");
+`], "content4");
 
-let filesToRead = [content1, content2];
+let filesToRead = [content1, content2, content3, content4];
 let imgsToLoad = [13, 14];
 let foldernames = ["Air/", "Pigxell/"];
 let masterFolder = "./resources/";

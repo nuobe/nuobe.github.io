@@ -18,7 +18,7 @@ let content1 = new File([`
     <br>
     <br>
     <i class="fas fa-wind"></i> Link to 
-    <a target="_blank" href="http://projects.dma.ucla.edu/exhibitions/mfa2021/air/"><em>Air<em></a>
+    <a target="_blank" href="https://projects.dma.ucla.edu/exhibitions/mfa2021/air/"><em>Air<em></a>
     <br>
 </p>
 <img id="img-center1" src="resources/Air/p1.png">
@@ -83,11 +83,11 @@ let content2 = new File([`
 <br>
 <br>
 <i class="fas fa-hockey-puck"></i> Link to 
-<a target="_blank" href="http://projects.dma.ucla.edu/exhibitions/mfa2021/water/"><em>Water<em></a>
+<a target="_blank" href="https://projects.dma.ucla.edu/exhibitions/mfa2021/water/"><em>Water<em></a>
 <br>
 </p>
 <iframe style="background:white;"
-    src="http://projects.dma.ucla.edu/exhibitions/mfa2021/water/" frameborder="0">
+    src="https://projects.dma.ucla.edu/exhibitions/mfa2021/water/" frameborder="0">
 </iframe>
 </div>
 `], "content2");
@@ -115,11 +115,11 @@ In a situation where mineral and chemical based GPUs run out, <em>Fire</em> as a
 <br>
 <br>
 <i class="fas fa-fire"></i> Link to 
-<a target="_blank" href="http://projects.dma.ucla.edu/exhibitions/mfa2021/fire/"><em>Fire<em></a>
+<a target="_blank" href="https://projects.dma.ucla.edu/exhibitions/mfa2021/fire/"><em>Fire<em></a>
 <br>
 </p>
 <iframe style="background:black;"
-    src="http://projects.dma.ucla.edu/exhibitions/mfa2021/fire/" frameborder="0">
+    src="https://projects.dma.ucla.edu/exhibitions/mfa2021/fire/" frameborder="0">
 </iframe>
 </div>
 `], "content3");

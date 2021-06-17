@@ -186,7 +186,7 @@ function directToPages($button){
     requestTimeout(()=>{
 
         if(curIndex === 0){
-            window.location.href = "./CV";       
+            window.location.href = "./Records";       
         }
         else if(curIndex === 1){
             window.location.href = "./Design";

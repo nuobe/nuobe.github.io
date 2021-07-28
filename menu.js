@@ -34,15 +34,45 @@ let fontLight = "rgba(0, 0, 0, 0.75)"
 let fontDark = "rgba(255, 255, 255, 0.75)"
 let btnfontLight = "rgb(58, 53, 44)"
 let btnfontDark = "rgb(94, 113, 145)"
-let bgBrightness = brightnessContrastLight;
-let bgContrast = brightnessContrastLight;
-let bgInvert = invertLight;
-let bgBlur = blurLight;
-let bgSaturate = saturateLight;
-let tint = tintLight;
-let fontColor = fontLight;
-let btnfontColor = btnfontLight;
-let isLight = true;
+
+let bgBrightness;
+let bgContrast;
+let bgInvert;
+let bgBlur;
+let bgSaturate;
+let tint;
+let fontColor;
+let btnfontColor;
+
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+}
+
+let isLight = getRandomInt(0, 100) % 2 == 0 ? true : false;
+
+if(isLight){
+    bgBrightness = brightnessContrastLight;
+    bgContrast = brightnessContrastLight;
+    bgBlur = blurLight;
+    bgSaturate = saturateLight;
+    tint = tintLight;
+    fontColor = fontLight;
+    btnfontColor = btnfontLight;
+    bgInvert = invertLight;
+}
+else{
+    bgBrightness = brightnessDark;
+    bgContrast = contrastDark;
+    bgBlur = blurDark;
+    bgSaturate = saturateDark;
+    tint = tintDark;
+    fontColor = fontDark;
+    btnfontColor = btnfontDark;
+    bgInvert = invertDark;
+}
+
 let changeLightAnimStart;
 let switchLightDuration = 20000;
 let switchLightRand = Math.random() + 0.5;

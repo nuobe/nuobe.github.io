@@ -50,7 +50,7 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
 }
 
-let isLight = getRandomInt(0, 100) % 2 == 0 ? true : false;
+let isLight = getRandomInt(0, 100) % 3 == 0 || getRandomInt(0, 1000) % 3 == 1 ? true : false;
 
 if(isLight){
     bgBrightness = brightnessContrastLight;

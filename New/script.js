@@ -436,7 +436,11 @@ function main(){
 
     $navitems = $("nav .navlist");
 
-    $navitems.click(moveCircle);
+    $navitems.click((e)=>{
+        e.preventDefault();
+        moveCircle(e);
+        window.history.pushState("", "", "Pigxell")
+    });
 
     $navtint = $(".navtint");
 

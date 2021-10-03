@@ -436,7 +436,10 @@ function main(){
 
     $navitems = $("nav .navlist");
 
-    $navitems.click(moveCircle);
+    $navitems.click(()=>{
+        moveCircle();
+        return false;
+    });
 
     $navtint = $(".navtint");
 

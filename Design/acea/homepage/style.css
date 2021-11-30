@@ -1,0 +1,830 @@
+html,body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    isolation: isolate;
+}
+body::-webkit-scrollbar{
+    width:0;
+}
+
+.fusion-page-title-bar{
+	display: none;
+}
+
+.fusion-logo-link{
+	display: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+.full-header-05nuo{
+    position: relative;
+    background: linear-gradient(180deg, rgb(91, 97, 187) 30%,rgb(209, 206, 218) 100%);
+    display: block;
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+}
+@media only screen and (max-height:500px){
+    .full-header-05nuo{
+        background: linear-gradient(180deg, rgb(91, 97, 187) 20%, rgb(209, 206, 218) 100%);
+    }
+}
+@media only screen and (max-height:400px){
+    .full-header-05nuo{
+        background: linear-gradient(180deg, rgb(91, 97, 187) 25%, rgb(209, 206, 218) 100%);
+    }
+}
+
+.title-stress-05nuo{
+    font-weight: 400;
+    font-style: italic;
+}
+.title-stress-bold-05nuo{
+    font-weight: 700;
+    font-style: italic;
+}
+
+#header-title-05nuo{
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+
+    padding-right: 4%; 
+    padding-bottom: max(1.5%, 20px); 
+    padding-left: max(5%, 20px);
+
+    font-family: 'Lato', sans-serif;
+    color: rgb(255, 255, 255);
+    font-weight: normal;
+
+    transition: transform 0.1s ease;
+
+    mix-blend-mode: normal;
+}
+
+#header-title-05nuo h1{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+    box-sizing: border-box;
+    margin: 0;
+
+    font-weight: 300;
+    transition: width 0.2s ease;
+}
+
+#header-title-05nuo h1 .sub-item1-05nuo{
+    animation: subtitle-intro-05nuo 0.6s ease 0.3s 1 normal both;
+}
+#header-title-05nuo h1 .sub-line-05nuo{
+    position: relative;
+    display:block;
+    height:100%;
+    width: 5px;
+
+    background:rgb(255, 255, 255);
+    transform-origin: top;
+}
+#title-line1-05nuo{
+    animation: line-slide-05nuo 3s ease 0s 1 normal both;
+}
+#title-line2-05nuo{
+    animation: line-slide2-05nuo 3s ease 0s 1 normal both;
+}
+
+@keyframes subtitle-intro-05nuo{
+    0%{
+        transform: translateY(50%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes line-slide-05nuo{
+    0%{
+        transform: scaleY(0);
+        transform-origin: top;
+        opacity: 0;
+    }
+    12%{
+        transform: scaleY(0);
+        transform-origin: top;
+        opacity: 0;
+    }
+    25%{
+        transform: scaleY(0.5);
+        transform-origin: top;
+        opacity: 1;
+    }
+    28%{
+        transform: scaleY(0.5);
+        transform-origin: bottom;
+        opacity: 1;
+    }
+    38%{
+        transform: scaleY(0);
+        transform-origin: bottom;
+        opacity: 0;
+    }
+    45%{
+        transform: scaleY(0);
+        transform-origin: bottom;
+        opacity: 0;
+    }
+    50%{
+        transform: scaleY(0.5);
+        transform-origin: bottom;
+        opacity: 1;
+    }
+    57%{
+        transform: scaleY(0.5);
+        transform-origin: top;
+        opacity: 1;
+    }
+    65%{
+        transform: scaleY(0);
+        transform-origin: top;
+        opacity: 0;
+    }
+    100%{
+        transform: scaleY(0);
+        transform-origin: top;
+        opacity: 0;
+    } 
+}
+
+@keyframes line-slide2-05nuo{
+    0%{
+        transform: scaleY(0);
+        transform-origin: bottom;
+        opacity: 0;
+    }
+    12%{
+        transform: scaleY(0);
+        transform-origin: bottom;
+        opacity: 0;
+    }
+    25%{
+        transform: scaleY(0.5);
+        transform-origin: bottom;
+        opacity: 0.9;
+    }
+    28%{
+        transform: scaleY(0.5);
+        transform-origin: top;
+        opacity: 0.9;
+    }
+    38%{
+        transform: scaleY(0);
+        transform-origin: top;
+        opacity: 0;
+    }
+    45%{
+        transform: scaleY(0);
+        transform-origin: top;
+        opacity: 0;
+    }
+    50%{
+        transform: scaleY(0.5);
+        transform-origin: top;
+        opacity: 0.9;
+    }
+    57%{
+        transform: scaleY(0.5);
+        transform-origin: bottom;
+        opacity: 0.9;
+    }
+    65%{
+        transform: scaleY(0);
+        transform-origin: bottom;
+        opacity: 0;
+    }
+    100%{
+        transform: scaleY(0);
+        transform-origin: bottom;
+        opacity: 0;
+    } 
+}
+    
+#svg-bg-05nuo{
+    position:absolute;
+    width: 100vmax;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+.bg-svg-path-05nuo{
+    fill: none;
+    fill-opacity: 0;
+    stroke: rgba(252, 255, 224, 1);
+    stroke-width: 6px;
+    stroke-linecap: square;
+}
+#bg-path1-05nuo{
+    stroke-dasharray: 1500 4500;
+    animation: stroke-offset-05nuo 6s linear 1.25s infinite normal both;
+}
+#bg-path2-05nuo{
+    stroke-dasharray: 1450 4500;
+    animation: stroke-offset-05nuo 6s linear 2.35s infinite normal both;
+}
+#bg-path3-05nuo{
+    stroke-dasharray: 1650 4500;
+    animation: stroke-offset-05nuo 6s linear 2.9s infinite normal both;
+}
+#bg-path4-05nuo{
+    stroke-dasharray: 1600 4500;
+    animation: stroke-offset-05nuo 6s linear 3.95s infinite normal both;
+}
+#bg-path5-05nuo{
+    stroke-dasharray: 1400 4500;
+    animation: stroke-offset-05nuo 6s linear 4.25s infinite normal both;
+}
+#bg-path6-05nuo{
+    stroke-dasharray: 1500 4500;
+    animation: stroke-offset-05nuo 6s linear 5.3s infinite normal both;
+}
+#bg-path7-05nuo{
+    stroke-dasharray: 1450 4500;
+    animation: stroke-offset-05nuo 6s linear 5.69s infinite normal both;
+}
+#bg-path8-05nuo{
+    stroke-dasharray: 1650 4500;
+    animation: stroke-offset-05nuo 6s linear 6s infinite normal both;
+}
+#bg-path9-05nuo{
+    stroke-dasharray: 1600 4500;
+    animation: stroke-offset-05nuo 6s linear 6.3s infinite normal both;
+}
+#bg-path10-05nuo{
+    stroke-dasharray: 1400 4500;
+    animation: stroke-offset-05nuo 6s linear 7s infinite normal both;
+}
+#bg-path11-05nuo{
+    stroke-dasharray: 1400 4500;
+    animation: stroke-offset-05nuo 6s linear 7.2s infinite normal both;
+}
+
+@keyframes stroke-offset-05nuo{
+    0%{
+        stroke-dashoffset: 1650;
+        stroke-width: 1px;
+        opacity: 0.05;
+    }
+    35%{
+        stroke-dashoffset: 100;
+        stroke-width: 9px;
+        opacity: 0.2;
+    }
+    70%{
+        stroke-dashoffset: -4500;
+        stroke-width: 1px;
+        opacity: 0.05;
+    }
+    100%{
+        stroke-dashoffset: -4500;
+        stroke-width: 1px;
+        opacity: 0.05;
+    }
+}
+
+#header-svg-05nuo{
+    --animation-seek-05nuo: 0;
+    position: absolute;
+    display: block;
+    overflow: hidden;
+    transform: translateX(0) translateY(0);
+    transition: left 1s ease, top 1s ease, width 1s ease, height 1s ease;
+}
+
+.svg-clip-path-05nuo{
+    animation: svg-clip-anim-05nuo 1s ease;
+    animation-play-state: paused;
+    animation-fill-mode: both;
+    animation-delay: calc(var(--animation-seek-05nuo)*-1s);
+}
+.svg-mobile-clip-path-05nuo{
+    animation: svg-clip-mobile-anim-05nuo 1s ease;
+    animation-play-state: paused;
+    animation-fill-mode: both;
+    animation-delay: calc(var(--animation-seek-05nuo)*-1s);
+}
+
+@keyframes svg-clip-anim-05nuo{
+    0%{
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
+
+    33%{
+        clip-path: polygon(72% 0%, 100% 0%, 100% 100%, 72% 93%);
+    }
+
+    66%{
+        clip-path: polygon(3% 0%, 31.5% 0%, 31.5% 90%, 3% 100%);
+    }
+
+    100%{
+        clip-path: polygon(37% 0%, 68% 0%, 68% 100%, 37% 100%);
+    }
+}
+@keyframes svg-clip-mobile-anim-05nuo{
+    0%{
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
+
+    33%{
+        clip-path: polygon(72% 0%, 100% 0%, 100% 100%, 72% 93%);
+    }
+
+    66%{
+        clip-path: polygon(3% 0%, 31.5% 0%, 31.5% 90%, 3% 100%);
+    }
+
+    100%{
+        clip-path: polygon(35% 0%, 70% 0%, 70% 59%, 35% 59%);
+    }
+}
+
+.header-svg-wind-path{
+    fill: none;
+    fill-opacity: 0;
+    stroke: rgb(223, 223, 223);
+    stroke-linecap: square;
+    stroke-dasharray: 1000 4000;
+}
+#wind-path4-05nuo{
+    animation: wind-lines-05nuo 6s linear 1.25s infinite normal both;
+}
+#wind-path3-05nuo{
+    animation: wind-lines-05nuo 6s linear 2.35s infinite normal both;
+}
+#wind-path2-05nuo{
+    animation: wind-lines-05nuo 6s linear 2.9s infinite normal both;
+}
+#wind-path1-05nuo{
+    animation: wind-lines-05nuo 6s linear 3.95s infinite normal both;
+}
+#wind-path-05nuo{
+    animation: wind-lines-05nuo 6s linear 4.25s infinite normal both;
+}
+@keyframes wind-lines-05nuo{
+    0%{
+        stroke-dashoffset: 1650;
+        stroke-width: 1px;
+        opacity: 0.1;
+    }
+    35%{
+        stroke-dashoffset: 100;
+        stroke-width: 5px;
+        opacity: 0.2;
+    }
+    70%{
+        stroke-dashoffset: -4500;
+        stroke-width: 1px;
+        opacity: 0.1;
+    }
+    100%{
+        stroke-dashoffset: -4500;
+        stroke-width: 1px;
+        opacity: 0.1;
+    }
+}
+
+#scroll-bg-05nuo{
+    opacity: 0;
+    transition: opacity .4s ease-out;
+}
+
+/***************  */
+.panel-container-05nuo{
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Lato', sans-serif;
+    overflow: hidden;
+}
+.panel-div-05nuo{
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+}
+
+#enterprise-panel-05nuo{
+    --btn-font-size-05nuo: 30px;
+    /* color:rgb(75, 81, 168); */
+    color: rgb(59, 59, 59);
+    background: linear-gradient(180deg, rgb(209, 206, 218) 0%, rgb(233, 234, 240) 35%);
+    text-align: right;
+}
+#enterprise-panel-05nuo h2{
+    padding-left: 7%;
+    font-size: 55px;
+    font-weight: 700;
+    color:rgb(0, 0, 0);
+}
+#enterprise-panel-05nuo .enterprise-p-05nuo{
+    padding-left: 7%;
+    font-size: 30px;
+}
+
+#institution-panel-05nuo{
+    --btn-font-size-05nuo: 30px;
+    color: rgb(218, 220, 255);
+    background: rgb(116, 122, 206);
+}
+#institution-panel-05nuo h2{
+    padding-right: 7%;
+    font-size: 55px;
+    font-weight: 700;
+    color: white;
+}
+#institution-panel-05nuo .institution-p-05nuo{
+    padding-right: 5%;
+    font-size: 30px;
+}
+
+#association-panel-05nuo{
+    --btn-font-size-05nuo: 30px;
+    color: rgb(59, 59, 59);
+    background: linear-gradient(180deg, rgb(233, 234, 240) 0%, rgb(209, 206, 218) 80%);
+}
+.asc-flex-05nuo{
+    position: absolute;
+    display: flex;
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+    width: 100%;
+
+    top:0;
+    left:0;
+    flex-direction: row;
+    gap: 0;
+}
+#asc-half-panel-05nuo{
+    position: relative;
+    box-sizing: border-box;
+    text-align:right;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+#asc-half-panel-05nuo h2{
+    padding-bottom: 3%;
+    font-weight: 700;
+    color: rgb(0, 0, 0);
+}
+#edu-half-panel-05nuo{
+    position: relative;
+    box-sizing: border-box;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+#edu-half-panel-05nuo h2{
+    padding-bottom: 3%;
+    font-weight: 700;
+    color: rgb(0, 0, 0);
+}
+.reset-handp-05nuo{
+    margin: 0;
+    padding: 0;
+}
+
+.panel-button-05nuo{
+    position: relative;
+    display: inline-block;
+    padding: max(2%, 11px) max(5%, 15px);
+    border-radius: 5% / 25%;
+    text-align: center;
+    font-size: var(--btn-font-size-05nuo);
+    margin-top: calc(var(--btn-font-size-05nuo) * 1.5);
+    cursor: pointer;
+    user-select: none;
+    overflow: hidden;
+    font-weight: 700;
+
+    transform-style: preserve-3d;
+    transform-origin: center;
+}
+.panel-btn-smaller-radius{
+    text-align: center;
+    border-radius: 2.5% / 25%;
+    padding:  max(1.5%, 8px) max(5%, 15px);
+    transform: scale(1);
+}
+.btn-align-right-05nuo{
+    transform-origin: right;
+}
+.panel-button-white-05nuo{
+    background: rgb(224, 225, 231);
+    color: rgb(93, 93, 187);
+}
+.panel-button-dark-05nuo{
+    background: rgb(127, 133, 216);
+    color: white;
+}
+
+.btn-hover-bg-05nuo{
+    --narrow-padding-05nuo: 0;
+    position: absolute;
+    box-sizing: border-box;
+    left: 0;
+    top: 0;
+    width:100%;
+    height:100%;
+    transform: translateX(-100%);
+    user-select: none;
+}
+.btn-hover-bg-right-05nuo{
+    padding-left: var(--narrow-padding-05nuo);
+    padding-right: calc(var(--btn-font-size-05nuo)*2.65);
+    text-align: right;
+}
+
+.btn-bg-light-05nuo{
+    background: white;
+}
+.btn-bg-dark-05nuo{
+    background: rgb(78, 78, 161);
+}
+.btn-bg-content-05nuo{
+    position: absolute;
+    display: block;
+    top: calc(50% - var(--btn-font-size-05nuo)/2);
+}
+.btn-bg-text-05nuo{
+    position: relative;
+    display: inline;
+}
+.btn-bg-content-right-05nuo{
+    left: calc(100% - var(--btn-font-size-05nuo)*2);
+}
+
+@keyframes btn-bg-slide-right-start-05nuo {
+    0%{
+        opacity: 0.5;
+        transform: translateX(-100%);
+        border-radius: 30% / 50%;
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0%);
+        border-radius: 5% / 25%;
+    }
+}
+@keyframes btn-narrow-bg-slide-right-start-05nuo {
+    0%{
+        opacity: 0.25;
+        transform: translateX(-100%);
+        border-radius: 25% / 50%;
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0%);
+        border-radius: 2.5% / 25%;
+    }
+}
+@keyframes arrow-slide-right-start-05nuo {
+    0%{
+        opacity: 0;
+        transform: translateX(-150%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+@keyframes btn-bg-slide-right-end-05nuo {
+    0%{
+        opacity: 1;
+        transform: translateX(0%);
+        border-radius: 5% / 25%;
+    }
+    100%{
+        opacity: 0.5;
+        transform: translateX(100%);
+        border-radius: 30% / 50%;
+    }
+}
+@keyframes btn-narrow-bg-slide-right-end-05nuo {
+    0%{
+        opacity: 1;
+        transform: translateX(0%);
+        border-radius: 2.5% / 25%;
+    }
+    100%{
+        opacity: 0.25;
+        transform: translateX(100%);
+        border-radius: 25% / 50%;
+    }
+}
+@keyframes arrow-slide-right-end-05nuo {
+    0%{
+        opacity: 1;
+        transform: translateX(0%);
+    }
+    100%{
+        opacity: 0;
+        transform: translateX(-70%);
+    }
+}
+
+/*panel text and btn transition anim*/
+.panel-text-start-05nuo{
+    transform: translateY(75px);
+    opacity: 0;
+    animation: none;
+    transition: animation 1s ease;
+}
+.cta-btn-start-05nuo{
+    transform: perspective(300px) rotateX(-90deg) translateY(50%);
+    transition: animation 1s ease;
+}
+.title-show-up-05nuo{
+    animation: panel-text-show-up-05nuo 1s ease 0s 1 normal both;
+}
+.title-hide-up-05nuo{
+    animation: panel-text-hide-up-05nuo 1s ease 0s 1 normal both;
+}
+.title-show-down-05nuo{
+    animation: panel-text-show-down-05nuo 1s ease 0s 1 normal both;
+}
+.title-hide-down-05nuo{
+    animation: panel-text-hide-down-05nuo 1s ease 0s 1 normal both;
+}
+.p-show-up-05nuo{
+    animation: panel-text-show-up-05nuo 1s ease 0.2s 1 normal both;
+}
+.p-hide-up-05nuo{
+    animation: panel-text-hide-up-05nuo 1s ease 0.2s 1 normal both;
+}
+.p-show-down-05nuo{
+    animation: panel-text-show-down-05nuo 1s ease 0.2s 1 normal both;
+}
+.p-hide-down-05nuo{
+    animation: panel-text-hide-down-05nuo 1s ease 0.2s 1 normal both;
+}
+.btn-show-up-05nuo{
+    animation: btn-show-up-05nuo 1s ease 0.8s 1 normal both;
+}
+.btn-hide-up-05nuo{
+    animation: btn-hide-up-05nuo 1s ease 0s 1 normal both;
+}
+.btn-show-down-05nuo{
+    animation: btn-show-down-05nuo 1s ease 0.8s 1 normal both;
+}
+.btn-hide-down-05nuo{
+    animation: btn-hide-down-05nuo 1s ease 0s 1 normal both;
+}
+
+@keyframes panel-text-show-up-05nuo {
+    0%{
+        transform: translateY(75px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1; 
+    }
+}
+@keyframes panel-text-hide-up-05nuo {
+    0%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(-75px);
+        opacity: 0; 
+    }
+}
+@keyframes panel-text-show-down-05nuo{
+    0%{
+        transform: translateY(-75px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1; 
+    }
+}
+@keyframes panel-text-hide-down-05nuo{
+    0%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(75px);
+        opacity: 0; 
+    } 
+}
+@keyframes btn-show-up-05nuo{
+    0%{
+        transform: perspective(300px) rotateX(-90deg) translateY(50%);
+    }
+    40%{
+        transform: perspective(300px) rotateX(15deg) translateY(-15%); 
+    }
+    100%{
+        transform: perspective(300px) rotateX(0deg) translateY(0);
+    }
+}
+@keyframes btn-hide-up-05nuo{
+    0%{
+        transform: perspective(300px) rotateX(0deg) translateY(0);
+    }
+    60%{
+        transform: perspective(300px) rotateX(-15deg) translateY(15%);
+    }
+    100%{
+        transform: perspective(300px) rotateX(90deg) translateY(-50%);
+    }
+}
+@keyframes btn-show-down-05nuo{
+    0%{
+        transform: perspective(300px) rotateX(90deg) translateY(-50%);
+    }
+    40%{
+        transform: perspective(300px) rotateX(-15deg) translateY(15%); 
+    }
+    100%{
+        transform: perspective(300px) rotateX(0deg) translateY(0);
+    }
+}
+@keyframes btn-hide-down-05nuo{
+    0%{
+        transform: perspective(300px) rotateX(0deg) translateY(0);
+    }
+    60%{
+        transform: perspective(300px) rotateX(15deg) translateY(-15%);
+    }
+    100%{
+        transform: perspective(300px) rotateX(-90deg) translateY(50%);
+    }
+}
+
+/****************/
+#nav-buttons-05nuo{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: flex-end;
+    width: clamp(20px, 1.15vmax, 80px);
+    height: 50%;
+    box-sizing: border-box;
+    isolation: isolate;
+    z-index: 2;
+
+    transform-style: preserve-3d;
+    animation: nav-show-05nuo 0.8s ease 0.5s 1 normal both;
+}
+
+@keyframes nav-show-05nuo {
+    0%{
+        transform: perspective(300px) rotateY(-90deg) translate(-20px, 0);
+    }
+    40%{
+        transform: perspective(300px) rotateY(5deg) translate(5px, 0); 
+    }
+    100%{
+        transform: perspective(300px) rotateX(0deg) translate(0, 0);
+    }
+}
+
+.nav-button-general-05nuo{
+    display: block;
+    box-sizing: border-box;
+    width: clamp(20px, 1.15vmax, 80px);
+    height: clamp(20px, 1.15vmax, 80px);
+    border:none;
+    padding: 0;
+    border-radius: 20%;
+    transition: border-radius 0.2s cubic-bezier(.48,-0.59,.53,1.5), transform 0.2s cubic-bezier(.48,-0.59,.53,1.5),
+    border 0.1s ease, background 0.1s ease;
+    cursor: pointer;
+}
+
+
+/*TODO: change the padding-top to desired spacing to leave space for header menu 
+        when the site is integrated into Wordpress*/
+.header-title-padding-top-05nuo{
+    padding-top: max(3%, 50px);
+}

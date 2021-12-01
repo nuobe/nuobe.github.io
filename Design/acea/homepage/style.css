@@ -430,8 +430,7 @@ a{
 
 #enterprise-panel-05nuo{
     --btn-font-size-05nuo: 30px;
-    /* color:rgb(75, 81, 168); */
-    color: rgb(59, 59, 59);
+    color:rgb(75, 81, 168);
     background: linear-gradient(180deg, rgb(209, 206, 218) 0%, rgb(233, 234, 240) 35%);
     text-align: right;
 }
@@ -439,7 +438,7 @@ a{
     padding-left: 7%;
     font-size: 55px;
     font-weight: 700;
-    color:rgb(0, 0, 0);
+    color:rgb(75, 81, 168);
 }
 #enterprise-panel-05nuo .enterprise-p-05nuo{
     padding-left: 7%;
@@ -464,7 +463,7 @@ a{
 
 #association-panel-05nuo{
     --btn-font-size-05nuo: 30px;
-    color: rgb(59, 59, 59);
+    color: rgb(75, 81, 168);
     background: linear-gradient(180deg, rgb(233, 234, 240) 0%, rgb(209, 206, 218) 80%);
 }
 .asc-flex-05nuo{
@@ -490,7 +489,7 @@ a{
 #asc-half-panel-05nuo h2{
     padding-bottom: 3%;
     font-weight: 700;
-    color: rgb(0, 0, 0);
+    color: rgb(75, 81, 168);
 }
 #edu-half-panel-05nuo{
     position: relative;
@@ -501,7 +500,7 @@ a{
 #edu-half-panel-05nuo h2{
     padding-bottom: 3%;
     font-weight: 700;
-    color: rgb(0, 0, 0);
+    color: rgb(75, 81, 168);
 }
 .reset-handp-05nuo{
     margin: 0;
